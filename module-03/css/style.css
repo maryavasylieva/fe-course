@@ -1,0 +1,71 @@
+body {
+   font-family: "Playfair Display", "Arial", serif;
+   color: #626262;
+}
+
+.main-menu-item1 {
+   margin-right: 123px;
+}
+
+.main-menu2 {
+   margin-right: 105px;
+}
+
+.main-menu3 {
+   margin-right: 95px;
+}
+
+.main-menu li:last-child {
+   margin-right: 0;
+}
+
+.main-nav{
+   display: inline-block;
+   margin: 0;
+   padding: 0;
+   font-size: 14px;
+   list-style: none;
+   vertical-align: middle;
+   padding-left: 292px;
+   padding-top: 77px;
+   padding-bottom: 77px;
+}
+
+.main-menu li {
+   display: inline-block;
+}  
+
+.main-menu a {
+   text-decoration: none;
+   text-transform: uppercase;
+   font-size: 14px;
+   font-weight: 400;
+   color: #626262;
+}
+
+.main-content {
+   width: 421px;
+   display: inline-block;
+   margin: 0;
+   padding: 0;
+}
+
+.description  {
+   text-transform: uppercase;
+   font-family: "Ubuntu", "Arial", sans-serif;
+   font-weight: 300;
+}
+
+h3 {
+   font-size: 30px;
+   font-weight: 400;
+   line-height: 36px;
+}
+
+p {
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 17px;
+   
+}
+
