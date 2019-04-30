@@ -43,12 +43,20 @@ body {
    color: #626262;
 }
 
-.main-content-item {
+.main-content {
+   font-size: 0;
+}
+
+article {
    width: 421px;
    display: inline-block;
-   margin: 0;
-   padding: 0;
+   margin-right: 61px;
 }
+
+article:nth-child(2n) {
+   margin-right: 0;
+}
+
 
 .description  {
    text-transform: uppercase;
@@ -68,4 +76,3 @@ p {
    line-height: 17px;
    
 }
-
