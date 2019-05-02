@@ -10,7 +10,17 @@ html {
 
 body {
    font-family: "Playfair Display", "Arial", serif;
-   color: #626262;
+   color: rgb(98,98,98);
+}
+
+.main-nav {
+   display: inline-block;
+   font-size: 14px;
+   list-style: none;
+   vertical-align: middle;
+   padding-left: 292px;
+   padding-top: 77px;
+   padding-bottom: 77px;
 }
 
 .main-menu-item1 {
@@ -29,16 +39,6 @@ body {
    margin-right: 0;
 }
 
-.main-nav{
-   display: inline-block;
-   font-size: 14px;
-   list-style: none;
-   vertical-align: middle;
-   padding-left: 292px;
-   padding-top: 77px;
-   padding-bottom: 77px;
-}
-
 .main-menu li {
    display: inline-block;
 }  
@@ -48,7 +48,7 @@ body {
    text-transform: uppercase;
    font-size: 14px;
    font-weight: 400;
-   color: #626262;
+   color: rgb(98,98,98);
 }
 
 .main-content {
@@ -61,7 +61,6 @@ body {
 }
 
 article {
-   vertical-align: top;
    width: 421px;
    display: inline-block;
    margin-right: 61px;
@@ -78,6 +77,8 @@ article:nth-child(2n) {
    font-family: "Ubuntu", "Arial", sans-serif;
    font-weight: 300;
    margin-bottom: 27px;
+   color: rgb(180, 173, 158);
+   padding-top: 18px;
 }
 
 h3 {
@@ -97,14 +98,15 @@ p {
 .load {
    text-align: center;
 } 
+
 .load-button{
    border: none;
-   margin: 0;
+   margin-bottom: 92px;
    padding: 0;
    font-size: 20px;
    border: 1px solid;
    line-height: 24px;
-   /* display: block; */
+   display: inline-block; 
    color: rgb(108, 108, 108);
    min-width: 162px;
    height: 58px;
