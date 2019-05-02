@@ -59,6 +59,7 @@ body {
 
 .content {
    font-size: 0;
+   padding-bottom: 92px;
 }
 
 .main-content {
@@ -115,7 +116,6 @@ p {
    border: none;
    display: block; 
    margin: 0 auto;
-   padding-bottom: 92px;
    font-size: 20px;
    border: 1px solid;
    line-height: 24px;
