@@ -14,13 +14,18 @@ body {
 }
 
 .main-nav {
-   display: inline-block;
+   display: block;
    font-size: 14px;
    list-style: none;
    vertical-align: middle;
-   padding-left: 292px;
    padding-top: 77px;
    padding-bottom: 77px;
+   text-align: center;
+}
+.main-menu {
+   margin: 0;
+   padding: 0;
+   font-size: 0;
 }
 
 .main-menu-item1 {
@@ -47,8 +52,13 @@ body {
    text-decoration: none;
    text-transform: uppercase;
    font-size: 14px;
+   display: block;
    font-weight: 400;
    color: rgb(98,98,98);
+}
+
+.content {
+   font-size: 0;
 }
 
 .main-content {
@@ -56,19 +66,23 @@ body {
 }
 
 .wrapper {
-   width: 907px;
+   width: 900px;
    margin: 0 auto;
 }
 
-article {
-   width: 421px;
+.main-text {
+   width: 420px;
    display: inline-block;
-   margin-right: 61px;
+   margin-right: 60px;
    margin-bottom: 138px;
 }
 
-article:nth-child(2n) {
+.main-text:nth-child(2n) {
    margin-right: 0;
+}
+
+.main-photo {
+   margin-bottom: 32px;
 }
 
 
@@ -76,15 +90,16 @@ article:nth-child(2n) {
    text-transform: uppercase;
    font-family: "Ubuntu", "Arial", sans-serif;
    font-weight: 300;
+   margin: 0;
    margin-bottom: 27px;
    color: rgb(180, 173, 158);
-   padding-top: 18px;
 }
 
 h3 {
    font-size: 30px;
    font-weight: 400;
    line-height: 36px;
+   margin: 0;
    margin-bottom: 41px;
 }
 
@@ -92,21 +107,18 @@ p {
    font-size: 14px;
    font-weight: 400;
    line-height: 17px;
+   margin: 0;
    
 }
- 
-.load {
-   text-align: center;
-} 
 
 .load-button{
    border: none;
-   margin-bottom: 92px;
-   padding: 0;
+   display: block; 
+   margin: 0 auto;
+   padding-bottom: 92px;
    font-size: 20px;
    border: 1px solid;
    line-height: 24px;
-   display: inline-block; 
    color: rgb(108, 108, 108);
    min-width: 162px;
    height: 58px;
