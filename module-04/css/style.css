@@ -96,9 +96,11 @@ h2::after {
 
 .product-list-item {
    float: left;
-   padding-left: 15px;
-   padding-right: 15px;
+   margin-left: 15px;
+   margin-right: 15px;
    padding-bottom: 30px;
+   /* padding-left: 15px;
+   padding-right: 15px; */
 }
 
 .product-list-item a {
@@ -219,8 +221,10 @@ p {
 
 .news-list-item {
    width: 350px;
-   padding-left: 15px;
-   padding-right: 15px;
+   margin-left: 15px;
+   margin-right: 15px;
+   /* padding-right: 15px;
+   padding-left: 15px; */
 }
 
 .news-list-item {
