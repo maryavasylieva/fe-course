@@ -21,7 +21,7 @@ body {
 }
 
 .wrapper {
-   width: 1180px;
+   width: 1110px;
    margin: 0 auto;
 }
 
@@ -120,6 +120,7 @@ h2::after {
 
 .our-news{
    clear: left;
+   padding-bottom: 56px;
 }
 
 h2 {
@@ -148,7 +149,7 @@ h2 {
    padding-right: 14px;
    padding-bottom: 10px;
    padding-left: 14px;
-   margin: 0px;
+   margin: 0;
    
 }
 
@@ -187,6 +188,7 @@ h2 {
 
 .news-list {
    margin: 0;
+   padding:0;
 }
 
 .news{
@@ -196,6 +198,7 @@ h2 {
 .news-list li{
    float: left;
    list-style: none;
+   padding: 0;
 }
 
 h3 {
@@ -229,7 +232,6 @@ p {
    width: 350px;
    margin: 0;
    margin-right: 30px;
-   margin-bottom: 56px;
 }
 
 .news-list-item:last-child {
