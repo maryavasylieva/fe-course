@@ -71,6 +71,7 @@ body {
 .navigation a:hover,
 .navigation a:focus {
    color: rgb(26,188,156);
+   transition: 1s;
 }
 
 .navigation li:last-child {
@@ -312,6 +313,8 @@ body {
    left: 0;
    width: 235px;
    height: 261px;
+   transition: 3s;
+   transform: rotate(3deg);
 }
 
 .icon {
@@ -343,12 +346,13 @@ body {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   
 
 }
 
-.innerUP {
+/* .innerUP {
    opacity: 1;
-}
+} */
 
 .icon-like {
    background-image: url(../img/heart.png);
@@ -429,29 +433,40 @@ body {
 .icon-like:hover {
    background-color: #1abc9c;
    border: 1px solid  #1abc9c;
+   transition: 0.5s;
+   transform: rotate(3deg);
 }
 
 .icon-cross:hover {
    background-color: #1abc9c;
    border: 1px solid  #1abc9c;
+   transition: 1s;
+   transform: rotate(3deg);
 }
 
 .icon-buy:hover {
    background-color: #323232;
    border: 1px solid  #323232;
+   transition: 1s;
+   transform: rotate(3deg);
 }
 
 .icon-clock:hover {
    background-color: #1abc9c;
    border: 1px solid  #1abc9c;
+   transition: 1s;
+   transform: rotate(3deg);
+
 }
 
 .product-list:hover .price{
    background-color:  #7fd9c7; 
+   transition: 1s;
 }
 
 .product-list:hover .description {
    background-color: #1abc9c;
+   transition: 1s;
 }
 
 /* FOOTER */
