@@ -71,7 +71,7 @@ body {
 .navigation a:hover,
 .navigation a:focus {
    color: rgb(26,188,156);
-   transition: 1s;
+   transition: 0.5s;
 }
 
 .navigation li:last-child {
@@ -314,7 +314,7 @@ body {
    width: 235px;
    height: 261px;
    transition: 3s;
-   transform: rotate(3deg);
+   transform: rotate(2deg);
 }
 
 .icon {
