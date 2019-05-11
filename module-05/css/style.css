@@ -126,7 +126,7 @@ body {
 
 .left-arrow {
    border: none;
-   background: url(/img/arrow-left.png);
+   background: url(../img/arrow-left.png);
    position: absolute;
    margin: 30px;
    top: 0;
@@ -138,7 +138,7 @@ body {
 
 .right-arrow {
    border: none;
-   background: url(/img/arrow-right.png);
+   background: url(../img/arrow-right.png);
    position: absolute;
    margin: 32px 0 0 43px;
    top: 0;
@@ -381,7 +381,7 @@ body {
 }
 
 .icon-clock {
-   background-image: url(/img/clock.png);
+   background-image: url(../img/clock.png);
    background-repeat: no-repeat;
    background-size: auto;
    background-position: center;
