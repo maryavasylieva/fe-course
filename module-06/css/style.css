@@ -1,0 +1,220 @@
+html {
+   box-sizing: border-box
+}
+
+*,
+*::before
+*::after {
+   box-sizing: inherit;
+} 
+
+img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.wrapper {
+   width: 1200px;
+   margin: 0 auto;
+}
+
+/* NAVIGATION */
+
+.main-navigation {
+   display : flex;
+   min-height: 100px;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.navigation {
+   font-family: "Montaserrat", "Arial", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   list-style: none;
+   display: flex;
+   justify-content: space-between;
+   width: 400px;
+}
+
+.menu-link:hover::after {
+   left: 0;
+   bottom: 0;
+   display: block; 
+   border: 2px solid;
+   color: rgb(243, 129, 129);
+   content: '';
+   /* margin-top: 12px; */
+}
+
+.navigation a:hover,
+.navigation a:focus {
+   color: rgb(243, 129, 129);
+   transition: 1s;
+}
+
+.navigation a {
+   display: block;
+   color: #95e1d3;
+   text-decoration: none;
+   text-transform: uppercase;
+   border-bottom: 3px solid transparent;
+   
+}
+
+
+/* MAIN CONTENT */
+
+.headline h3 {
+   font-family: "Kaushan Script", sans-serif;
+   font-weight: 400;
+   font-size: 24px;
+   line-height: 30px;
+   text-align: center;
+   margin-bottom: 22px;
+   margin-top: 160px;
+   color: #333333;
+}
+
+
+.headline h2 {
+   font-family:"Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 30px;
+   text-align: center;
+   text-transform: uppercase;
+   color: #333333;
+}
+
+.headline h2::after {
+   display: block;
+   width: 60px;
+   height: 3px;
+   background-color: rgb(243, 129, 129);
+   content: '';
+   margin: 0 auto;
+   margin-top: 40px;
+   margin-bottom: 66px;
+}
+
+
+
+.work h4 {
+   font-family: "Montserrat", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   text-transform: uppercase;
+   padding-bottom: 21px;
+   color: #333333;
+}
+
+.work p {
+   font-family: "Roboto", sans-serif;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 18px;
+   color: #999999;
+}
+
+.main-content {
+   display: flex;
+   flex-wrap: wrap;
+   align-content: center;
+   justify-content: space-between;
+
+}
+
+.main-content li {
+   list-style: none;
+   width: 280px;
+   margin-bottom: 100px;
+}
+
+.work {
+   margin-left: 80px;
+   position: relative;
+}
+
+.alarm::before {
+   content: url(../img/icons/ALARM.png);
+   position: absolute;
+   left: -60px; 
+}
+
+.graph::before {
+   content: url(../img/icons/LINE\ GRAPH.png);
+   position: absolute;
+   left: -60px;
+}
+
+.computer::before {
+   content: url(../img/icons/COMPUTER\ _\ OK.png);
+   position: absolute;
+   left: -60px;
+
+}
+
+.book::before {
+   content: url(../img/icons/BOOK\ 2.png);
+   position: absolute;
+   left: -60px;
+}
+
+.home::before {
+   content: url(../img/icons/HOME.png);
+   position: absolute;
+   left: -60px;
+}
+
+.picture::before {
+   content: url(../img/icons/IMAGE.png);
+   position: absolute;
+   left: -60px;
+}
+
+.meet-team h3 {
+   font-family: "Kaushan Script", sans-serif;
+   font-weight: 400;
+   font-size: 24px;
+   line-height: 30px;
+   color: #333333;
+   text-align: center;
+   margin-bottom: 22px;
+
+   /* margin-top: 160px  */
+}
+
+.meet-team h2 {
+   font-family:"Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 30px;
+   text-align: center;
+   text-transform: uppercase;
+   color: #333333;
+}
+
+.meet-team h2::after {
+   display: block;
+   width: 60px;
+   height: 3px;
+   background-color: rgb(243, 129, 129);
+   content: '';
+   margin: 0 auto;
+   margin-top: 42px;
+   margin-bottom: 46px;
+}
+
+.about p {
+   font-family: "Roboto", sans-serif;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 18px;
+   text-align: center;
+   color: #999999;
+}
