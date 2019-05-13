@@ -343,30 +343,30 @@ img {
 }
 
 .icon-twitter:hover {
-   background-color: #1abc9c;
-   border: 1px solid  #1abc9c;
+   background-color: #95e1d3;
+   border: 1px solid  #95e1d3;
    transition: 0.5s;
 
 }
 
 
 .icon-facebook:hover {
-   background-color: #1abc9c;
-   border: 1px solid  #1abc9c;
+   background-color: #95e1d3;
+   border: 1px solid  #95e1d3;
    transition: 0.5s;
   
 }
 
 .icon-pinterest:hover {
-   background-color: #1abc9c;
-   border: 1px solid  #1abc9c;
+   background-color: #95e1d3;
+   border: 1px solid  #95e1d3;;
    transition: 0.5s;
    
 }
 
 .icon-instagram:hover {
-   background-color: #1abc9c;
-   border: 1px solid  #1abc9c;
+   background-color: #95e1d3;
+   border: 1px solid  #95e1d3;
    transition: 0.5s;
 }
 
@@ -389,5 +389,4 @@ img {
    height: 52px;
    background-color: rgb(252, 227, 138);
 }
-
 
