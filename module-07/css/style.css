@@ -150,13 +150,24 @@ img {
 
 .box {
    background-color: rgb(34, 34, 34);
-   min-height: 677px;
+   padding-top: 110px;
+   /* padding-bottom: 64px; */
+}
+
+.conteiner {
+   min-height: 100%;
+   max-width: 1400px;
+   margin: 0 auto;
+}
+
+.map {
    background-image: url(../img/Map\ Image.png);
-   min-width: 1400px;
    background-position: right;
    background-repeat: no-repeat;
-
+   width: 100%;
+   min-height: 537px;
 }
+
 
 .contact h2 {
    font-family: "Montserrat", sans-serif;
@@ -179,21 +190,127 @@ img {
    text-align: center;
 }
 
-/* .map {
-   background-image: url(../img/Map\ Image.png);
-   max-width: 1400px;
-   background-position: center;
-   background-repeat: no-repeat;
-} */
+.contact {
+   padding-bottom: 142px;
+}
 
+
+input[type="text"] {
+   border-style: solid;
+   border-width: 1px;
+   border-color: rgb(204, 204, 204);
+   border-radius: 2px;
+   background-color: rgb(255, 255, 255);
+   width: 459px;
+   height: 50px;
+   outline: none;
+   font-size: 14px;
+   font-family: "Montserrat", sans-serif;
+   color: rgb(187, 187, 187);
+   font-weight: bold;
+   text-transform: uppercase;
+   text-align: left;
+   margin-bottom: 28px;
+}
+
+input[type="email"] {
+   border-style: solid;
+   border-width: 1px;
+   border-color: rgb(204, 204, 204);
+   border-radius: 2px;
+   background-color: rgb(255, 255, 255);
+   width: 459px;
+   height: 50px;
+   outline: none;
+   font-size: 14px;
+   font-family: "Montserrat", sans-serif;
+   color: rgb(187, 187, 187);
+   font-weight: bold;
+   text-transform: uppercase;
+   text-align: left;
+   margin-bottom: 28px;
+}
+
+form {
+   display: flex;
+}
+
+textarea {
+   overflow: auto;
+   border-style: solid;
+   border-width: 1px;
+   border-color: rgb(204, 204, 204);
+   border-radius: 2px;
+   background-color: rgb(255, 255, 255);
+   width: 454px;
+   height: 213px;
+   outline: none;
+   font-size: 14px;
+   font-family: "Montserrat", sans-serif;
+   color: rgb(187, 187, 187);
+   font-weight: bold;
+   text-transform: uppercase;
+   text-align: left;
+}
+
+
+
+.area {
+   margin-left: 30px;
+}
+
+input:required:valid {
+   border-color: green;
+}
+
+input:required:invalid {
+   border-color: red;
+}
+
+.send {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 60px;
+}
  
-.Background {
-   background-color: rgb(34, 34, 34);
+.message {
+   border-width: 1px;
+   border-color: rgb(255, 255, 255);
+   border-style: solid;
+   border: none;
+   border-radius: 3px;
+   background-color: rgb(254, 209, 54);
+   width: 240px;
+   height: 66px;
+   text-transform: uppercase;
+   font-size: 18px;
+   font-family: "Montserrat";
+   color: rgb(255, 255, 255);
+   font-weight: bold;
+   text-align: center;
+}
+
+.message-form {
+   display: flex;
+   justify-content: space-between;
+}
+ 
+.order { 
+   display: flex;
+   flex-direction: column;
+   padding-bottom: 30px; 
+ }   
+
+
+ .Map_Image {
+   background-image: url("Map Image.png");
+   opacity: 0.302;
    position: absolute;
-   left: -2px;
-   top: 642px;
-   width: 1402px;
-   height: 677px;
-   z-index: 3;
+   left: 786px;
+   top: 762px;
+   width: 614px;
+   height: 537px;
+   z-index: 4;
  }
  
