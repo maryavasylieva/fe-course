@@ -1,0 +1,178 @@
+
+@media (min-width: 760px) {
+   
+   .container {
+      max-width: 100%;
+   }
+
+   .third-partner {
+      margin-bottom: 0;
+   }
+
+   .fourth-partner {
+      margin-bottom: 0;
+   }
+}
+
+@media (min-width: 768px) {
+
+   .container {
+     width: 768px;
+   }
+
+   .navigate {
+      background-image: url(../img/tab\ .png);
+      min-height: 700px;
+   }
+      
+   .site-logo {
+      padding-top: 0;
+   }
+
+   .main-navigation {
+     max-width: 674px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     padding-top: 40px;
+     padding-bottom: 120px;
+     margin: 0 auto;
+   }
+
+   .main-headline {
+      max-width: 532px;
+      margin: 0 auto;
+   }
+   
+   .menu-link{
+      border: 3px solid transparent;
+      border-radius: 20px;
+      padding: 8px 15px;
+      
+   }
+
+   .menu-link:hover {
+      border: 2px solid white
+   }
+
+
+   .main-headline h2 {
+      font-size: 52px;
+      margin-bottom: 40px;
+   }
+
+   .button-find {
+      width: 226px;
+      height: 40px;
+   } 
+
+   .main-headline p {
+      font-size: 24px;
+      margin-bottom: 30px;
+   }
+    
+   .headline-site {
+      margin-bottom: 40px;
+   }
+
+   .first-partner {
+      max-width: 236px;
+      padding-right: 54px;
+   }  
+
+   .second-partner {
+      max-width: 236px;
+   }
+
+   .third-partner {
+      padding-right: 54px;
+   }
+
+
+   .other {
+      padding-top: 40px;
+   }
+
+   .partner-list {
+      max-width: 512px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      justify-content: center;
+   }
+}   
+
+/* @media (min-width: 767px) {
+   
+   .container {
+      max-width: 100%;
+   }
+
+   .third-partner {
+      margin-bottom: 0;
+   }
+
+   .fourth-partner {
+      margin-bottom: 0;
+   }
+} */
+
+
+@media (min-width: 1439px) {
+   .first-partner {
+      margin-bottom: 0;
+   }
+
+   .second-partner {
+      margin-bottom: 0;
+   }
+}
+
+
+
+@media (min-width: 1440px) {
+
+   .navigate {
+      background-image: url(../img/desk.png);
+      min-height: 700px;
+
+   }
+
+   .container {
+      width: 1440px;
+   } 
+
+   .main-navigation {
+      max-width: 940px;
+   }
+
+   .headline p {
+      margin-bottom: 40px;
+   }
+    
+   .partner-list {
+      max-width: 940px;
+   }
+
+   .headline-site {
+      margin-bottom: 76px;
+   }
+
+   /* .first-partner {
+      margin-bottom: 0;
+   }
+
+   .second-partner {
+      margin-bottom: 0;
+   } */
+
+}   
+
+
+ 
+ 
+
+
+
+ 
+
