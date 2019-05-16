@@ -102,21 +102,6 @@
    }
 }   
 
-/* @media (min-width: 767px) {
-   
-   .container {
-      max-width: 100%;
-   }
-
-   .third-partner {
-      margin-bottom: 0;
-   }
-
-   .fourth-partner {
-      margin-bottom: 0;
-   }
-} */
-
 
 @media (min-width: 1439px) {
    .first-partner {
@@ -152,19 +137,12 @@
     
    .partner-list {
       max-width: 940px;
+      margin: 0 auto;
    }
 
    .headline-site {
       margin-bottom: 76px;
    }
-
-   /* .first-partner {
-      margin-bottom: 0;
-   }
-
-   .second-partner {
-      margin-bottom: 0;
-   } */
 
 }   
 
