@@ -119,9 +119,12 @@ body {
 
 }
 
-/* .partner {
+
+
+.partner {
    max-width: 219px;
-} */
+   margin: 0 auto;
+}
 
 .find {
    /* padding-top: 20px; */
