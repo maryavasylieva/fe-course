@@ -228,7 +228,7 @@ img {
    text-transform: uppercase;
    color: #333333;
    text-align: center; 
-   line-height: 17px;
+   line-height: 34px;
 }
 
 .position {
@@ -285,7 +285,7 @@ img {
    opacity: 1;
    justify-content: center;
    align-items: center;
-   background: linear-gradient( 90deg, rgb(252,227,138) 0%, rgb(243,129,129) 100%);
+   background: linear-gradient( 180deg, rgb(252,227,138) 50%, rgb(243,129,129) 50%);
 
 }
 
@@ -388,3 +388,5 @@ img {
    background-color: rgb(252, 227, 138);
 }
 
+
+ 
