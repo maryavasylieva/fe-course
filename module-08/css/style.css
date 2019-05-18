@@ -346,7 +346,7 @@ body {
    position: relative;
 }
 
-.fourth-card::before {
+.fourth-card::after {
    content: '';
    background: url(../img/icon\ partner\ 4.png);
    background-position: center;
@@ -401,7 +401,7 @@ body {
 
 }
 
-.visually-hidden:not(:focus):not(:active),
+/* .visually-hidden:not(:focus):not(:active),
 input[type='checkbox'].visually-hidden,
 input[type='radio'].visually-hidden {
   position: absolute;
@@ -414,7 +414,7 @@ input[type='radio'].visually-hidden {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
+} */
 
 
  
