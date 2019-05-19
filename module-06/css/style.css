@@ -210,16 +210,31 @@ img {
    font-family: "Roboto", sans-serif;
    font-size: 15px;
    font-weight: 400;
-   line-height: 18px;
+   line-height: 30px;
    text-align: center;
    color: #999999;
-   margin-bottom: 94px;
+   padding-bottom: 94px;
+   width: 943px;
+   margin: 0 auto;
 }
 
-.we {
+.content {
+   padding-bottom: 156px;
+}
+
+.our {
+   width: 381px;
+}
+
+.box-team {
    display: flex;
    justify-content: space-between;
    align-content: center;
+   width: 672px;
+}
+
+.our {
+   margin-right: 30px;
 }
 
 .name {
@@ -257,19 +272,21 @@ img {
    left: 0;
    right: 0;
    bottom: 0;
-   background-image: linear-gradient( 90deg, rgb(252,227,138) 0%, rgb(243,129,129) 100%);
+   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
    opacity: 0;
    transition: all .3s ease;
 }
 
 .team-photo:hover:before {
-   opacity: 0.5;
-   background: linear-gradient( 90deg, rgb(252,227,138) 0%, rgb(243,129,129) 100%);
+   opacity: 0.8;
+   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
 }
 
 /* background: linear-gradient( 90deg, rgb(252,227,138) 0%, rgb(243,129,129) 100%); */
 
-.our:hover .team-photo {
+.developer:hover .team-photo {
    color: rgb(149, 225, 211);
    transform: translate(-10px, -10px);
    box-shadow: 10px 10px;
@@ -280,14 +297,15 @@ img {
    position: relative;
 }
 
+/* ICON */
+
 .our:hover .icon-section {
    display: flex;
    opacity: 1;
    justify-content: center;
    align-items: center;
-   background: linear-gradient( 180deg, rgb(252,227,138) 50%, rgb(243,129,129) 50%);
-
 }
+
 
 .icon-section {
    position: absolute;
@@ -305,9 +323,10 @@ img {
    background-position: center;
    opacity: 1;
    float: left;
-   width: 50px;
-   height: 50px;
+   width: 56px;
+   height: 56px;
    border-width: 1px;
+   background-color: #fce38a;
    border-color: rgba(255, 166, 0, 0.493);
    border-style: solid;
 }
@@ -319,9 +338,10 @@ img {
    background-position: center;
    opacity: 1;
    float: left;
-   width: 50px;
-   height: 50px;
+   width: 56px;
+   height: 56px;
    border-width: 1px;
+   background-color: #fce38a;
    border-color: rgba(255, 166, 0, 0.493);
    border-style: solid;
 }
@@ -333,9 +353,10 @@ img {
    background-position: center;
    opacity: 1;
    float: left;
-   width: 50px;
-   height: 50px;
+   width: 56px;
+   height: 56px;
    border-width: 1px;
+   background-color: #fce38a;
    border-color: rgba(255, 166, 0, 0.493);
    border-style: solid;
 }
@@ -375,18 +396,100 @@ img {
    background-position: center;
    opacity: 1;
    float: left;
-   width: 50px;
-   height: 50px;
+   width: 56px;
+   height: 56px;
    border-width: 1px;
+   background-color: #fce38a;
    border-color: rgba(255, 166, 0, 0.493);
    border-style: solid;
 }
 
 .card {
-   width: 208px;
-   height: 52px;
+   width: 224px;
+   height: 56px;
    background-color: rgb(252, 227, 138);
 }
 
 
+.design-author::before{ 
+   display: block;
+   content: '';
+   background-color: rgb(229, 229, 229);
+   width: 1200px;
+   height: 1px;
+}
+
+.author {
+   display: flex;
+   justify-content: space-between;
+   padding: 25px 0 25px 0;
+   
+}
+
+.text-author {
+   display: flex;
+   align-self: center;
+}
+
+.contact {
+   font-family: "Montserrat", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   color: #333333;
+}
+
+.name-author {
+   font-family: "Montserrat", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   color: #f38181;
+}
+
+.form-message {
+   display: flex;
+}
+
+input[type="email"] {
+   border-style: solid;
+   border-width: 1px;
+   border-color: rgb(231, 231, 231);
+   background-color: rgb(255, 255, 255);
+   width: 234px;
+   height: 40px;
+   font-size: 15px;
+   font-family: "Roboto";
+   color: rgb(204, 204, 204);
+   font-style: italic;
+   padding-left: 5px;
+}
+
+.subscribe {
+   border-width: 1px;
+   border-color: rgb(149, 225, 211);
+   border-style: solid;
+   border: none;
+   background-color: rgb(149, 225, 211);
+   width: 150px;
+   height: 42px;
+   font-family: "Montserrat", sans-serif;
+   font-size: 14px;
+   font-weight: 700;
+   text-transform: uppercase;
+   color: #ffffff;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
  
