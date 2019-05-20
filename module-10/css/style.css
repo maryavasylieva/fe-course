@@ -1,0 +1,331 @@
+html {
+   box-sizing: border-box
+}
+
+*,
+*::before
+*::after {
+   box-sizing: inherit;
+} 
+
+img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.wrapper {
+   width: 1200px;
+   margin: 0 auto;
+}
+
+.menu {
+   background-position: center;
+   background-repeat: no-repeat;
+   min-height: 1004px;
+   background-image:-moz-linear-gradient(
+      90deg,
+      rgba(252, 227, 138, 0.7),
+      rgba(243, 129 ,129, 0.7)
+    ),
+    -moz-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
+    url('../img/Layer\ 15@1x-min.jpg');
+    background-image:-webkit-linear-gradient(
+      90deg,
+      rgba(252, 227, 138, 0.7),
+      rgba(243, 129 ,129, 0.7)
+    ),
+    -webkit-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
+    url('../img/Layer\ 15@1x-min.jpg');
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),(-moz-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+   .menu {
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 1004px;
+    background-image: -moz-linear-gradient(
+      90deg,
+      rgba(252, 227, 138, 0.7),
+      rgba(243, 129 ,129, 0.7)
+    ),
+    -moz-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
+    url('../img/Layer\ 15@2x-min.jpg');
+    background-image:-webkit-linear-gradient(
+      90deg,
+      rgba(252, 227, 138, 0.7),
+      rgba(243, 129 ,129, 0.7)
+    ),
+    -webkit-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
+    url('../img/Layer\ 15@2x-min.jpg');
+   }
+}
+
+.menu__navigation {
+   display : flex;
+   min-height: 100px;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.menu__main {
+   font-family: "Montserrat", "Arial", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   list-style: none;
+   display: flex;
+   justify-content: space-between;
+   width: 400px;
+}
+
+.menu__main a {
+   display: block;
+   color: #ffffff;
+   text-decoration: none;
+   text-transform: uppercase;
+   border-bottom: 3px solid transparent;
+}
+
+.menu__icon{
+   width: 18px;
+   height: 15px;
+}
+
+.menu__icon__cart {
+   fill: #ffffff;
+}
+
+.menu__icon__cart:hover {
+   fill: #fce38a;
+}
+
+.menu__icon__glass {
+   fill: #ffffff;
+}
+
+.menu__icon__glass:hover {
+   fill: #fce38a;
+}
+
+.headline__main {
+   width: 821px;
+   margin: 0 auto;
+}
+
+.headline__site {
+   font-family: "Kaushan Script", sans-serif;
+   font-size: 72px;
+   color: #ffffff;
+   text-align: center;
+   margin: 163px 0 60px 0;
+}
+
+.headline__main {
+   font-family: "Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 150px;
+   color: #ffffff;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.headline__button {
+   text-align: center;
+   margin: 126px 0 0 0;
+   padding: 0 0 230px 0;
+}
+
+.headline__button__decor {
+
+   border-style: solid;
+   border-width: 3px;
+   border-color: rgb(255, 255, 255);
+   background-color: rgba(0, 0, 0, 0);
+   width: 164px;
+   height: 44px;
+   /* border: none;
+   border-style: solid transparent; */
+   font-family: "Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 14px;
+   text-transform: uppercase;
+   color: #ffffff;
+}
+
+.main__headline {
+   font-family: "Kaushan Script", sans-serif;
+   font-size: 24px;
+   text-align: center;
+   color: #333333;
+   margin-bottom: 22px;
+   margin-top: 160px;
+}
+
+.headline__text {
+   font-family:"Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 30px;
+   text-align: center;
+   text-transform: uppercase;
+   color: #333333;
+}
+
+.headline__text:after {
+   display: block;
+   width: 60px;
+   height: 3px;
+   background-color: #f38181;
+   content: '';
+   margin: 0 auto;
+   margin-top: 40px;
+   margin-bottom: 66px;
+}
+
+/* .content {
+   min-width: 1182px;
+} */
+
+.content__main {
+   display: flex;
+   flex-wrap: wrap;
+   align-content: center;
+   justify-content: space-between;
+}
+
+.content__main li {
+   list-style: none;
+   width: 280px;
+   margin-bottom: 100px;
+}
+
+.content__list {
+   margin-left: 80px;
+   position: relative;
+}
+
+.content__list h4 {
+   font-family: "Montserrat", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   text-transform: uppercase;
+   padding-bottom: 21px;
+   color: #333333;
+}
+
+.content__list p {
+   font-family: "Roboto", sans-serif;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 18px;
+   color: #999999;
+}
+
+.content__photo::before {
+   display: inline-block;
+   width: 32px;
+   height: 31px;
+   content: '';
+   background-image: url(../img/alarm.svg);
+   position: absolute;
+   left: -60px;
+}
+
+.content__graph::before {
+   display: inline-block;
+   width: 32px;
+   height: 31px;
+   content: '';
+   background-image: url(../img/linegraph.svg);
+   position: absolute;
+   left: -60px;
+}
+
+.content__computer::before {
+   display: inline-block;
+   width: 32px;
+   height: 31px;
+   content: '';
+   background-image: url(../img/computer.svg);
+   position: absolute;
+   left: -60px;
+}
+
+.content__book::before {
+   display: inline-block;
+   width: 32px;
+   height: 31px;
+   content: '';
+   background-image: url(../img/book.svg);
+   position: absolute;
+   left: -60px;
+}
+
+.content__home::before {
+   display: inline-block;
+   width: 32px;
+   height: 31px;
+   content: '';
+   background-image: url(../img/home.svg);
+   position: absolute;
+   left: -60px;
+}
+
+.content__picture::before {
+   display: inline-block;
+   width: 32px;
+   height: 31px;
+   content: '';
+   background-image: url(../img/image.svg);
+   position: absolute;
+   left: -60px;
+}
+
+
+.team__headline {
+   font-family: "Kaushan Script", sans-serif;
+   font-weight: 400;
+   font-size: 24px;
+   line-height: 30px;
+   color: #333333;
+   text-align: center;
+   margin-bottom: 22px;
+}
+
+.team__about {
+   font-family:"Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 30px;
+   text-align: center;
+   text-transform: uppercase;
+   color: #333333;
+
+}
+
+.team__about::after {
+   display: block;
+   width: 60px;
+   height: 3px;
+   background-color: rgb(243, 129, 129);
+   content: '';
+   margin: 0 auto;
+   margin-top: 42px;
+   margin-bottom: 46px;
+}
+
+.team__text {
+   font-family: "Roboto", sans-serif;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 30px;
+   text-align: center;
+   color: #999999;
+   padding-bottom: 94px;
+   width: 943px;
+   margin: 0 auto;
+}
+ 
