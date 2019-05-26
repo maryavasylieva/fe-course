@@ -1,0 +1,39 @@
+.team__box {
+   display: flex;
+   justify-content: space-between;
+   align-content: center;
+}
+
+.team__list {
+   height: 470px;
+   width: 380px;
+   position: relative;
+}
+
+.team__list:hover .team__photo {
+   color: rgb(149, 225, 211);
+   transform: translate(-10px, -10px);
+   box-shadow: 10px 10px;
+   transition: transform 0.2s linear;
+}
+
+/* HOVER на карточки */
+
+.team__photo::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   opacity: 0;
+   transition: all .3s ease;
+}
+
+.team__photo:hover:before {
+   opacity: 0.8;
+   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+}

@@ -1,0 +1,141 @@
+/* MAIN CONTENT */
+
+/* Первая секция */
+
+/* Заголовок первой секции */
+
+.main__headline {
+  @extend %main-subtitle;
+  font-family: $font-family-subtitle, sans-serif;
+  margin-top: 160px;
+//   font-size: 24px;
+//   text-align: center;
+//   color: #333333;
+//   margin-bottom: 22px;
+}
+
+/* Подзаголовок первой сеции */
+
+.headline__text {
+   @extend %main-headline;
+   font-family: $font-family-headline, sans-serif;
+
+}
+
+.headline__text:after {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #f38181;
+  content: '';
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 66px;
+}
+
+/* Основной контент первой секции - сервисы */
+
+
+.content {
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    list-style: none;
+    width: 280px;
+    margin-bottom: 100px;
+  }
+}
+
+// .content__main li {
+//    list-style: none;
+//    width: 280px;
+//    margin-bottom: 100px;
+// }
+
+.content__list {
+  margin-left: 80px;
+  position: relative;
+
+}
+
+.content__list h4 {
+  font-family: $font-family-headline, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 21px;
+  color: #333333;
+}
+
+.content__list p {
+  font-family: $primary-font-family, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+}
+
+.content__photo::before {
+  display: inline-block;
+  width: 32px;
+  height: 31px;
+  content: '';
+  background-image: url(../images/alarm.svg);
+  position: absolute;
+  left: -60px;
+}
+
+.content__graph::before {
+  display: inline-block;
+  width: 32px;
+  height: 31px;
+  content: '';
+  background-image: url(../images/linegraph.svg);
+  position: absolute;
+  left: -60px;
+}
+
+.content__computer::before {
+  display: inline-block;
+  width: 32px;
+  height: 31px;
+  content: '';
+  background-image: url(../images/computer.svg);
+  position: absolute;
+  left: -60px;
+}
+
+.content__book::before {
+  display: inline-block;
+  width: 32px;
+  height: 31px;
+  content: '';
+  background-image: url(../images/book.svg);
+  position: absolute;
+  left: -60px;
+}
+
+.content__home::before {
+  display: inline-block;
+  width: 32px;
+  height: 31px;
+  content: '';
+  background-image: url(../images/home.svg);
+  position: absolute;
+  left: -60px;
+}
+
+.content__picture::before {
+  display: inline-block;
+  width: 32px;
+  height: 31px;
+  content: '';
+  background-image: url(../images/image.svg);
+  position: absolute;
+  left: -60px;
+}

@@ -1,0 +1,199 @@
+.menu {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: -moz-linear-gradient(90deg,
+      rgba(252, 227, 138, 0.7),
+      rgba(243, 129, 129, 0.7)),
+    -moz-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
+    url('../images/Layer\ 15@1x-min.jpg');
+  background-image: -webkit-linear-gradient(90deg,
+      rgba(252, 227, 138, 0.7),
+      rgba(243, 129, 129, 0.7)),
+    -webkit-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
+    url('../images/Layer\ 15@1x-min.jpg');
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(-moz-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .menu {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: -moz-linear-gradient(90deg,
+        rgba(252, 227, 138, 0.7),
+        rgba(243, 129, 129, 0.7)),
+      -moz-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
+      url('../images/Layer\ 15@2x-min.jpg');
+    background-image: -webkit-linear-gradient(90deg,
+        rgba(252, 227, 138, 0.7),
+        rgba(243, 129, 129, 0.7)),
+      -webkit-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
+      url('../images/Layer\ 15@2x-min.jpg');
+  }
+}
+
+/* NAVIGATION */
+
+.menu__navigation {
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__main {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+
+  
+}
+
+.menu__main a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+}
+
+.menu__main a:hover,
+.menu__main a:focus {
+  color: #fce38a;
+  transition: 1s;
+}
+
+.menu__link::after {
+  left: 0;
+  bottom: 0;
+  display: block;
+  border: 3px solid;
+  color: #fce38a00;
+  content: '';
+  margin-top: 12px;
+}
+
+.menu__link:hover::after {
+  left: 0;
+  bottom: 0;
+  display: block;
+  border: 3px solid;
+  color: #fce38a;
+  content: '';
+  margin-top: 12px;
+  transition: 1s;
+}
+
+.menu__icon {
+  width: 18px;
+  height: 15px;
+}
+
+.menu__icon__cart {
+  fill: #ffffff;
+}
+
+.menu__icon__cart:hover {
+  fill: #fce38a;
+}
+
+.menu__icon__glass {
+  fill: #ffffff;
+}
+
+.menu__icon__glass:hover {
+  fill: #fce38a;
+}
+
+/* Главный заголовок сайта */
+
+.headline {
+  &__main {
+    width: 821px;
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 150px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__site {
+    font-family: "Kaushan Script", sans-serif;
+    font-size: 72px;
+    color: #ffffff;
+    text-align: center;
+    margin: 163px 0 60px 0;
+  }
+
+}
+
+// .headline__main {
+//   width: 821px;
+//   margin: 0 auto;
+//   font-family: "Montserrat", sans-serif;
+//   font-weight: 700;
+//   font-size: 150px;
+//   color: #ffffff;
+//   text-transform: uppercase;
+//   text-align: center;
+// }
+
+// .headline__site {
+//   font-family: "Kaushan Script", sans-serif;
+//   font-size: 72px;
+//   color: #ffffff;
+//   text-align: center;
+//   margin: 163px 0 60px 0;
+// }
+
+
+/* Кнопка в header */
+
+.headline__button {
+  text-align: center;
+  margin: 126px 0 0 0;
+  padding: 0 0 230px 0;
+
+  &__decor {
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    width: 164px;
+    height: 44px;
+    //   border: none;
+    //   border-style: solid transparent; 
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+
+// .headline__button__decor {
+
+//   border-style: solid;
+//   border-width: 3px;
+//   border-color: rgb(255, 255, 255);
+//   background-color: rgba(0, 0, 0, 0);
+//   width: 164px;
+//   height: 44px;
+//   //   border: none;
+//   //   border-style: solid transparent; 
+//   font-family: "Montserrat", sans-serif;
+//   font-weight: 700;
+//   font-size: 14px;
+//   text-transform: uppercase;
+//   color: #ffffff;
+// }

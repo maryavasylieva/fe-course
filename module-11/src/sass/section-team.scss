@@ -1,0 +1,159 @@
+/* MAIN CONTENT - TEAM */
+
+/* Карточки с командой */
+
+/* Вторая секция */
+
+/* Заголовок второй секции */
+
+.team__headline {
+   font-family: "Kaushan Script", sans-serif;
+   font-weight: 400;
+   font-size: 24px;
+   line-height: 30px;
+   color: #333333;
+   text-align: center;
+   margin-bottom: 22px;
+}
+
+/* Основной контент второй секции - описание */
+
+.team__about {
+   font-family:"Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 30px;
+   text-align: center;
+   text-transform: uppercase;
+   color: #333333;
+
+}
+
+.team__about::after {
+   display: block;
+   width: 60px;
+   height: 3px;
+   background-color: rgb(243, 129, 129);
+   content: '';
+   margin: 0 auto;
+   margin-top: 42px;
+   margin-bottom: 46px;
+}
+
+.team__text {
+   font-family: "Roboto", sans-serif;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 30px;
+   text-align: center;
+   color: #999999;
+   padding-bottom: 94px;
+   width: 943px;
+   margin: 0 auto;
+}
+
+.team__box__name {
+   padding-top: 30px;
+}
+
+.team__name {
+   font-family: "Montserrat", sans-serif;
+   font-size: 14px;
+   text-transform: uppercase;
+   color: #333333;
+   text-align: center; 
+   line-height: 34px;
+}
+
+.team__position {
+   font-family: "Roboto", sans-serif;
+   font-weight: 300;
+   font-style: italic;
+   color: #999999;
+   text-align: center;
+   font-size: 15px;
+}
+
+/* ICON на карточки */
+
+.team__icon__box li {
+   list-style: none;
+}
+
+.team__list__socials{
+   width: 224px;
+   height: 56px;
+   background-color: rgb(252, 227, 138);
+}
+
+.team__icon__elem a {
+   display: inline-block;
+   text-decoration: none;
+   float: left;
+   /* border-bottom: 1px solid transparent; */
+}
+
+.team__link svg {
+   position: absolute;
+   display: block;
+   width: 50%;
+   height: 50%;
+   transform: translate(-27%, -38%);
+   top: 50%;
+   fill: #f38181;
+}
+
+.team__content:hover .team__icon {
+   display: flex;
+   opacity: 1;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.team__link {
+   opacity: 1;
+   width: 56px;
+   height: 56px;
+   /* border-right: 1px solid rgba(255, 166, 0, 0.493); */
+   background-color: #fce38a;
+
+}
+
+.team__icon {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-style: transparent;
+   display: none;
+}
+
+/* HOVER на SVG */
+ 
+.team__link:hover {
+   background-color: #f38181;
+   /* border: 1px solid  #f38181; */
+   width: 56px;
+   height: 56px;
+   transition: 0.5s;
+} 
+
+.team__link:hover .team__facebook {
+   fill: #ffffff;
+}
+
+.team__link:hover .team__twitter {
+   fill: #ffffff;
+}
+
+.team__link:hover .team__instagram {
+   fill: #ffffff;
+} 
+
+.team__link:hover .team__pinterest {
+   fill: #ffffff;
+}
+
+.team__section {
+   padding: 0 0 90px 0;
+}
