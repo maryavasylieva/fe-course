@@ -14,6 +14,12 @@ img {
    height: auto;
 }
 
+.clearfix::after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
 * {
    margin: 0;
    padding: 0;
@@ -24,26 +30,10 @@ img {
    margin: 0 auto;
 }
 
-/* .menu{
-   min-height: 1004px;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-image:-moz-linear-gradient(
-      90deg,
-      rgba(252, 227, 138, 0.7),
-      rgba(243, 129 ,129, 0.7)
-    ),
-    -moz-linear-gradient(90deg, rgba(251, 226, 135, 0.7), rgba(243, 129, 129, 0.7)),
-    url('../img/Layer\ 15@1x-min.jpg');
-} */
-
-/* .main__inner {
-   background-image: url(../img/Layer\ 15@1x-min.jpg);
-
-} */
-
+/* HEADER */
 
 .menu {
+   width: 100%;
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -65,6 +55,7 @@ img {
 
 @media (-webkit-min-device-pixel-ratio: 2),(-moz-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
    .menu {
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -84,6 +75,8 @@ img {
     url('../img/Layer\ 15@2x-min.jpg');
    }
 }
+
+/* NAVIGATION */
 
 .menu__navigation {
    display : flex;
@@ -110,6 +103,33 @@ img {
    border-bottom: 3px solid transparent;
 }
 
+.menu__main a:hover,
+.menu__main a:focus {
+   color: #fce38a;
+   transition: 1s;
+}
+
+.menu__link::after {
+   left: 0;
+   bottom: 0;
+   display: block;
+   border: 3px solid;
+   color: #fce38a00;
+   content: '';
+   margin-top: 12px;
+}
+
+.menu__link:hover::after {
+   left: 0;
+   bottom: 0;
+   display: block;
+   border: 3px solid;
+   color: #fce38a;
+   content: '';
+   margin-top: 12px;
+   transition: 1s;
+}
+
 .menu__icon{
    width: 18px;
    height: 15px;
@@ -130,6 +150,8 @@ img {
 .menu__icon__glass:hover {
    fill: #fce38a;
 }
+
+/* Главный заголовок сайта */
 
 .headline__main {
    width: 821px;
@@ -152,6 +174,8 @@ img {
    text-transform: uppercase;
    text-align: center;
 }
+
+/* Кнопка в header */
 
 .headline__button {
    text-align: center;
@@ -176,6 +200,12 @@ img {
    color: #ffffff;
 }
 
+/* MAIN CONTENT */
+
+/* Первая секция */
+
+/* Заголовок первой секции */
+
 .main__headline {
    font-family: "Kaushan Script", sans-serif;
    font-size: 24px;
@@ -184,6 +214,8 @@ img {
    margin-bottom: 22px;
    margin-top: 160px;
 }
+
+/* Подзаголовок первой сеции */
 
 .headline__text {
    font-family:"Montserrat", sans-serif;
@@ -205,9 +237,7 @@ img {
    margin-bottom: 66px;
 }
 
-/* .content {
-   min-width: 1182px;
-} */
+/* Основной контент первой секции - сервисы */
 
 .content__main {
    display: flex;
@@ -304,6 +334,9 @@ img {
    left: -60px;
 }
 
+/* Вторая секция */
+
+/* Заголовок второй секции */
 
 .team__headline {
    font-family: "Kaushan Script", sans-serif;
@@ -314,6 +347,8 @@ img {
    text-align: center;
    margin-bottom: 22px;
 }
+
+/* Основной контент второй секции - описание */
 
 .team__about {
    font-family:"Montserrat", sans-serif;
@@ -336,6 +371,9 @@ img {
    margin-bottom: 46px;
 }
 
+/* MAIN CONTENT - TEAM */
+
+/* Карточки с командой */
 
 .team__box {
    display: flex;
@@ -344,6 +382,7 @@ img {
 }
 
 .team__list {
+   height: 470px;
    width: 380px;
    position: relative;
 }
@@ -352,7 +391,28 @@ img {
    color: rgb(149, 225, 211);
    transform: translate(-10px, -10px);
    box-shadow: 10px 10px;
-   transition: 1s;
+   transition: transform 0.2s linear;
+}
+
+/* HOVER на карточки */
+
+.team__photo::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   opacity: 0;
+   transition: all .3s ease;
+}
+
+.team__photo:hover:before {
+   opacity: 0.8;
+   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
 }
 
 .team__text {
@@ -389,17 +449,23 @@ img {
    font-size: 15px;
 }
 
+/* ICON на карточки */
+
+.team__icon__box li {
+   list-style: none;
+}
+
 .team__list__socials{
    width: 224px;
    height: 56px;
    background-color: rgb(252, 227, 138);
 }
 
-.team__list__socials a {
-   display: inline;
-   color: #ffffff;
+.team__icon__elem a {
+   display: inline-block;
    text-decoration: none;
-   border-bottom: 3px solid transparent;
+   float: left;
+   /* border-bottom: 1px solid transparent; */
 }
 
 .team__link svg {
@@ -409,6 +475,7 @@ img {
    height: 50%;
    transform: translate(-27%, -38%);
    top: 50%;
+   fill: #f38181;
 }
 
 .team__content:hover .team__icon {
@@ -419,18 +486,13 @@ img {
 
 }
 
-.team__list__socials {
-   display: flex;
-}
-
 .team__link {
    opacity: 1;
    width: 56px;
    height: 56px;
-   border-width: 1px;
+   /* border-right: 1px solid rgba(255, 166, 0, 0.493); */
    background-color: #fce38a;
-   border-color: rgba(255, 166, 0, 0.493);
-   border-style: solid;
+
 }
 
 .team__icon {
@@ -442,64 +504,30 @@ img {
    display: none;
 }
 
+/* HOVER на SVG */
+ 
 .team__link:hover {
    background-color: #f38181;
-   border: 2px solid  #f38181;
+   /* border: 1px solid  #f38181; */
    width: 56px;
    height: 56px;
-   /* transition: 0.5s; */
-}
+   transition: 0.5s;
+} 
 
-.team__twitter {
-   fill: #f38181;
-}
-
-.team__instagram {
-   fill: #f38181;
-}
-
-.team__facebook {
-   fill: #f38181;
-}
-
-.team__pinterest {
-   fill: #f38181;
-}
-
-.team__facebook:hover {
+.team__link:hover .team__facebook {
    fill: #ffffff;
 }
 
-.team__instagram:hover {
+.team__link:hover .team__twitter {
    fill: #ffffff;
 }
 
-.team__pinterest:hover{
+.team__link:hover .team__instagram {
    fill: #ffffff;
 } 
 
-.team__twitter:hover {
+.team__link:hover .team__pinterest {
    fill: #ffffff;
-}
-
-.team__photo::before {
-   height: 470px;
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
-   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
-   opacity: 0;
-   transition: all .3s ease;
-}
-
-.team__photo:hover:before {
-   opacity: 0.8;
-   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
-   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
 }
 
 .team__section {
@@ -508,6 +536,8 @@ img {
 
 
 /* FOOTER */
+
+/* Левая подсекция с автором */
 
 .site__author {
    display: block;
@@ -542,6 +572,8 @@ img {
    align-self: center;
 }
 
+/* Правая подсекция с формой подписки */
+
 .site__form__message {
    display: flex;
 }
@@ -559,6 +591,7 @@ input[type="email"] {
    font-style: italic;
    padding-left: 5px;
 }
+
 .site__button {
    border-width: 1px;
    border-color: rgb(149, 225, 211);
@@ -573,5 +606,4 @@ input[type="email"] {
    text-transform: uppercase;
    color: #ffffff;
 }
-
 
