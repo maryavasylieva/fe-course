@@ -3,15 +3,20 @@ html {
 }
 
 *,
-*::before
-*::after {
+*::before *::after {
    box-sizing: inherit;
-} 
+}
 
 img {
    display: block;
    max-width: 100%;
    height: auto;
+}
+
+.clearfix::after {
+   content: "";
+   display: table;
+   clear: both;
 }
 
 * {
@@ -24,10 +29,12 @@ img {
    margin: 0 auto;
 }
 
+/* HEADER CONTENT */
+
 /* NAVIGATION */
 
 .main-navigation {
-   display : flex;
+   display: flex;
    min-height: 100px;
    align-items: center;
    justify-content: space-between;
@@ -43,15 +50,30 @@ img {
    width: 400px;
 }
 
+/* HOVER под навигацией */
+
+.menu-link::after {
+   left: 0;
+   bottom: 0;
+   display: block;
+   border: 3px solid;
+   color: rgba(243, 129, 129, 0);
+   content: '';
+   margin-top: 12px;
+}
+
 .menu-link:hover::after {
    left: 0;
    bottom: 0;
-   display: block; 
+   display: block;
    border: 3px solid;
    color: rgb(243, 129, 129);
    content: '';
-   /* margin-top: 12px; */
+   margin-top: 12px;
+   transition: 1s;
 }
+
+/* HOVER на навигацию */
 
 .navigation a:hover,
 .navigation a:focus {
@@ -65,11 +87,13 @@ img {
    text-decoration: none;
    text-transform: uppercase;
    border-bottom: 3px solid transparent;
-   
+
 }
 
 
 /* MAIN CONTENT */
+
+/* Первый главный заголовок секции */
 
 .headline h3 {
    font-family: "Kaushan Script", sans-serif;
@@ -78,13 +102,13 @@ img {
    line-height: 30px;
    text-align: center;
    margin-bottom: 22px;
-   margin-top: 160px;
+   padding-top: 160px;
    color: #333333;
 }
 
 
 .headline h2 {
-   font-family:"Montserrat", sans-serif;
+   font-family: "Montserrat", sans-serif;
    font-weight: 700;
    font-size: 30px;
    text-align: center;
@@ -96,12 +120,14 @@ img {
    display: block;
    width: 60px;
    height: 3px;
-   background-color: rgb(243, 129, 129);
+   background-color: #f38181;
    content: '';
    margin: 0 auto;
    margin-top: 40px;
    margin-bottom: 66px;
 }
+
+/* Первый основной контент секции - сервисы */
 
 .work h4 {
    font-family: "Montserrat", sans-serif;
@@ -139,10 +165,14 @@ img {
    position: relative;
 }
 
+.main-content li:nth-child(n+3) {
+   margin-bottom: 0;
+}
+
 .alarm::before {
    content: url(../img/icons/ALARM.png);
    position: absolute;
-   left: -60px; 
+   left: -60px;
 }
 
 .graph::before {
@@ -176,6 +206,12 @@ img {
    left: -60px;
 }
 
+/* Второй главный заголовок секции */
+
+.meet-team {
+   padding: 92px 0 0 0;
+}
+
 .meet-team h3 {
    font-family: "Kaushan Script", sans-serif;
    font-weight: 400;
@@ -187,7 +223,7 @@ img {
 }
 
 .meet-team h2 {
-   font-family:"Montserrat", sans-serif;
+   font-family: "Montserrat", sans-serif;
    font-weight: 700;
    font-size: 30px;
    text-align: center;
@@ -206,6 +242,8 @@ img {
    margin-bottom: 46px;
 }
 
+/* Второй основной контент страницы - описание */
+
 .about p {
    font-family: "Roboto", sans-serif;
    font-size: 15px;
@@ -222,6 +260,11 @@ img {
    padding-bottom: 156px;
 }
 
+
+/* MAIN CONTENT - TEAM */
+
+/* Карточки с командой  */
+
 .our {
    width: 381px;
 }
@@ -230,7 +273,7 @@ img {
    display: flex;
    justify-content: space-between;
    align-content: center;
-   width: 672px;
+   /* width: 672px; */
 }
 
 .our {
@@ -242,7 +285,7 @@ img {
    font-size: 14px;
    text-transform: uppercase;
    color: #333333;
-   text-align: center; 
+   text-align: center;
    line-height: 34px;
 }
 
@@ -256,7 +299,7 @@ img {
 }
 
 .team-developer {
-   padding-top: 30px; 
+   padding-top: 30px;
 }
 
 .developer {
@@ -265,6 +308,8 @@ img {
    position: relative;
 }
 
+/* HOVER на карточки */
+
 .team-photo::before {
    content: "";
    position: absolute;
@@ -272,19 +317,17 @@ img {
    left: 0;
    right: 0;
    bottom: 0;
-   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
-   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -moz-linear-gradient(90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -webkit-linear-gradient(90deg, #FCE38A 0%, #F38181 100%);
    opacity: 0;
    transition: all .3s ease;
 }
 
 .team-photo:hover:before {
    opacity: 0.8;
-   background-image: -moz-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
-   background-image: -webkit-linear-gradient( 90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -moz-linear-gradient(90deg, #FCE38A 0%, #F38181 100%);
+   background-image: -webkit-linear-gradient(90deg, #FCE38A 0%, #F38181 100%);
 }
-
-/* background: linear-gradient( 90deg, rgb(252,227,138) 0%, rgb(243,129,129) 100%); */
 
 .developer:hover .team-photo {
    color: rgb(149, 225, 211);
@@ -293,11 +336,13 @@ img {
    transition: 1s;
 }
 
-.developer {
-   position: relative;
-}
+/* ICON на карточки */
 
-/* ICON */
+.card {
+   width: 223px;
+   height: 56px;
+   background-color: rgb(252, 227, 138);
+}
 
 .our:hover .icon-section {
    display: flex;
@@ -305,7 +350,6 @@ img {
    justify-content: center;
    align-items: center;
 }
-
 
 .icon-section {
    position: absolute;
@@ -316,6 +360,10 @@ img {
    display: none;
 }
 
+.icon-socials li {
+   list-style: none;
+}
+
 .icon-facebook {
    background-image: url(../img/icons/facebook.png);
    background-repeat: no-repeat;
@@ -323,12 +371,10 @@ img {
    background-position: center;
    opacity: 1;
    float: left;
-   width: 56px;
+   width: 55px;
    height: 56px;
-   border-width: 1px;
    background-color: #fce38a;
-   border-color: rgba(255, 166, 0, 0.493);
-   border-style: solid;
+   border-right: 1px solid rgba(255, 166, 0, 0.493);
 }
 
 .icon-twitter {
@@ -338,55 +384,23 @@ img {
    background-position: center;
    opacity: 1;
    float: left;
-   width: 56px;
+   width: 55px;
    height: 56px;
-   border-width: 1px;
    background-color: #fce38a;
-   border-color: rgba(255, 166, 0, 0.493);
-   border-style: solid;
+   border-right: 1px solid rgba(255, 166, 0, 0.493);
 }
 
-.icon-pinterest{
+.icon-pinterest {
    background-image: url(../img/icons/pinterest.png);
    background-repeat: no-repeat;
    background-size: auto;
    background-position: center;
    opacity: 1;
    float: left;
-   width: 56px;
+   width: 55px;
    height: 56px;
-   border-width: 1px;
+   border-right: 1px solid rgba(255, 166, 0, 0.493);
    background-color: #fce38a;
-   border-color: rgba(255, 166, 0, 0.493);
-   border-style: solid;
-}
-
-.icon-twitter:hover {
-   background-color: #95e1d3;
-   border: 1px solid  #95e1d3;
-   transition: 0.5s;
-
-}
-
-
-.icon-facebook:hover {
-   background-color: #95e1d3;
-   border: 1px solid  #95e1d3;
-   transition: 0.5s;
-  
-}
-
-.icon-pinterest:hover {
-   background-color: #95e1d3;
-   border: 1px solid  #95e1d3;;
-   transition: 0.5s;
-   
-}
-
-.icon-instagram:hover {
-   background-color: #95e1d3;
-   border: 1px solid  #95e1d3;
-   transition: 0.5s;
 }
 
 .icon-instagram {
@@ -396,22 +410,44 @@ img {
    background-position: center;
    opacity: 1;
    float: left;
-   width: 56px;
+   width: 55px;
    height: 56px;
-   border-width: 1px;
    background-color: #fce38a;
-   border-color: rgba(255, 166, 0, 0.493);
-   border-style: solid;
+   /* border: 1px solid rgba(255, 166, 0, 0.493); */
 }
 
-.card {
-   width: 224px;
-   height: 56px;
-   background-color: rgb(252, 227, 138);
+.icon-twitter:hover {
+   background-color: #95e1d3;
+   /* border: 1px solid #95e1d3; */
+   transition: 0.5s;
+
 }
 
+.icon-facebook:hover {
+   background-color: #95e1d3;
+   /* border: 1px solid #95e1d3; */
+   transition: 0.5s;
 
-.design-author::before{ 
+}
+
+.icon-pinterest:hover {
+   background-color: #95e1d3;
+   /* border: 1px solid #95e1d3; */
+   transition: 0.5s;
+
+}
+
+.icon-instagram:hover {
+   background-color: #95e1d3;
+   /* border: 1px solid #95e1d3; */
+   transition: 0.5s;
+}
+
+/* FOOTER SECTION */
+
+/* Левая подсекция с автором */
+
+.design-author::before {
    display: block;
    content: '';
    background-color: rgb(229, 229, 229);
@@ -423,7 +459,7 @@ img {
    display: flex;
    justify-content: space-between;
    padding: 25px 0 25px 0;
-   
+
 }
 
 .text-author {
@@ -444,6 +480,8 @@ img {
    font-weight: 400;
    color: #f38181;
 }
+
+/* Правая подсекция с формой подписки */
 
 .form-message {
    display: flex;
@@ -478,18 +516,19 @@ input[type="email"] {
    color: #ffffff;
 }
 
+/* Visually Hidden */
+
 .visually-hidden:not(:focus):not(:active),
 input[type='checkbox'].visually-hidden,
 input[type='radio'].visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   white-space: nowrap;
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
 }
- 
