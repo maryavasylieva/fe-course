@@ -1,0 +1,59 @@
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+
+
+.nav {
+   background-color: #000000;
+   background-image: url(../img/Vector\ Smart\ Object\ mob.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 547px;
+}
+
+
+.navigate a {
+   text-decoration: none;
+   display: block;
+}
+
+.site-logo {
+   text-align: center;
+}
+
+.navigation {
+   padding-top: 20px;
+   margin-bottom: 40px;
+}
+
+.navigate a {
+   color: #ffffff;
+}
+
+.navigate {
+   list-style: none;
+   font-family: "Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 14px;
+   text-align: center;
+}
+
+.link {
+   text-decoration: none;
+   padding-top: 116px;
+   text-transform: uppercase;
+   font-family: "Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 20px;
+   color: #ffffff;
+   text-align: center;
+  
+}
+
+
+
+@media (min-width: 768px) {
+   
