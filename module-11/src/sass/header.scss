@@ -46,7 +46,7 @@
 }
 
 .menu__main {
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: $font-family-headline, "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   list-style: none;
@@ -59,7 +59,7 @@
 
 .menu__main a {
   display: block;
-  color: #ffffff;
+  color: $default-color-white;
   text-decoration: none;
   text-transform: uppercase;
   border-bottom: 3px solid transparent;
@@ -67,7 +67,7 @@
 
 .menu__main a:hover,
 .menu__main a:focus {
-  color: #fce38a;
+  color: $color-nav-header;
   transition: 1s;
 }
 
@@ -86,7 +86,7 @@
   bottom: 0;
   display: block;
   border: 3px solid;
-  color: #fce38a;
+  color: $color-nav-header;
   content: '';
   margin-top: 12px;
   transition: 1s;
@@ -98,19 +98,19 @@
 }
 
 .menu__icon__cart {
-  fill: #ffffff;
+  fill: $default-color-white;
 }
 
 .menu__icon__cart:hover {
-  fill: #fce38a;
+  fill: $color-nav-header;
 }
 
 .menu__icon__glass {
-  fill: #ffffff;
+  fill: $default-color-white;
 }
 
 .menu__icon__glass:hover {
-  fill: #fce38a;
+  fill: $color-nav-header;
 }
 
 /* Главный заголовок сайта */
@@ -119,18 +119,18 @@
   &__main {
     width: 821px;
     margin: 0 auto;
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-family-headline, sans-serif;
     font-weight: 700;
     font-size: 150px;
-    color: #ffffff;
+    color: $default-color-white;
     text-transform: uppercase;
     text-align: center;
   }
 
   &__site {
-    font-family: "Kaushan Script", sans-serif;
+    font-family: $font-family-subtitle, sans-serif;
     font-size: 72px;
-    color: #ffffff;
+    color: $default-color-white;
     text-align: center;
     margin: 163px 0 60px 0;
   }
@@ -167,17 +167,17 @@
   &__decor {
     border-style: solid;
     border-width: 3px;
-    border-color: rgb(255, 255, 255);
+    border-color: $default-color-white;
     background-color: rgba(0, 0, 0, 0);
     width: 164px;
     height: 44px;
     //   border: none;
     //   border-style: solid transparent; 
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-family-headline, sans-serif;
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $default-color-white;
   }
 }
 

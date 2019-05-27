@@ -1,0 +1,70 @@
+.site {
+  &__author {
+    display: block;
+    content: '';
+    background-color: rgb(229, 229, 229);
+    width: 1200px;
+    height: 1px;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0 25px 0;
+  }
+
+
+  &__contact__text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333;
+  }
+
+  &__name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #f38181;
+  }
+
+  &__contact {
+    display: flex;
+    align-self: center;
+  }
+
+}
+
+
+// .site__author {
+//   display: block;
+//   content: '';
+//   background-color: rgb(229, 229, 229);
+//   width: 1200px;
+//   height: 1px;
+// }
+
+// .site__form {
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 25px 0 25px 0;
+// }
+
+// .site__contact__text {
+//   font-family: "Montserrat", sans-serif;
+//   font-size: 14px;
+//   font-weight: 400;
+//   color: #333333;
+// }
+
+// .site__name {
+//   font-family: "Montserrat", sans-serif;
+//   font-size: 14px;
+//   font-weight: 400;
+//   color: #f38181;
+// }
+
+// .site__contact {
+//   display: flex;
+//   align-self: center;
+// }
