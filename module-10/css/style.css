@@ -461,7 +461,7 @@ img {
    background-color: rgb(252, 227, 138);
 }
 
-.team__icon__elem a {
+.team__icon__inner a {
    display: inline-block;
    text-decoration: none;
    float: left;
