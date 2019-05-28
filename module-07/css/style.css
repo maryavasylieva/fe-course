@@ -62,7 +62,7 @@ img {
 
 /* MAIN CONTENT */
 
-.service h2 {
+.headline {
    font-family:"Montserrat", sans-serif;
    font-weight: 700;
    font-size: 40px;
@@ -73,7 +73,7 @@ img {
    padding-top: 50px;
 }
 
-.service p {
+.text {
    font-family: "Arapey", serif;
    font-size: 16px;
    font-weight: 400;
@@ -244,7 +244,7 @@ textarea {
    border-color: rgb(204, 204, 204);
    border-radius: 2px;
    background-color: rgb(255, 255, 255);
-   width: 455px;
+   /* width: 455px; */
    height: 200px;;
    outline: none;
    font-size: 14px;
