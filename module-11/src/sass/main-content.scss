@@ -8,17 +8,17 @@
   @extend %main-subtitle;
   font-family: $font-family-subtitle, sans-serif;
   margin-top: 160px;
-//   font-size: 24px;
-//   text-align: center;
-//   color: #333333;
-//   margin-bottom: 22px;
+  //   font-size: 24px;
+  //   text-align: center;
+  //   color: #333333;
+  //   margin-bottom: 22px;
 }
 
 /* Подзаголовок первой сеции */
 
 .headline__text {
-   @extend %main-headline;
-   font-family: $font-family-headline, sans-serif;
+  @extend %main-headline;
+  font-family: $font-family-headline, sans-serif;
 
 }
 

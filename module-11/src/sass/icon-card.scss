@@ -11,11 +11,11 @@
     display: inline-block;
     text-decoration: none;
     float: left;
-    /* border-bottom: 1px solid transparent; */
+    // /* border-bottom: 1px solid transparent; */
     opacity: 1;
     width: 56px;
     height: 56px;
-    /* border-right: 1px solid rgba(255, 166, 0, 0.493); */
+    // /* border-right: 1px solid rgba(255, 166, 0, 0.493); */
     background-color: $color-icon-section;
   }
 
@@ -26,12 +26,12 @@
     opacity: 1;
     justify-content: center;
     align-items: center;
-  
+
   }
 
   &__link:hover {
-    background-color: $color-icon;
-    /* border: 1px solid  #f38181; */
+    background-color: $color-icon-main;
+    // /* border: 1px solid  #f38181; */
     width: 56px;
     height: 56px;
     transition: 0.5s;
@@ -74,7 +74,7 @@
   height: 50%;
   transform: translate(-27%, -38%);
   top: 50%;
-  fill: $color-icon;
+  fill: $color-icon-main;
 }
 
 /* HOVER на SVG */
@@ -132,6 +132,3 @@
 //   background-color: #fce38a;
 
 // }
-
-
-

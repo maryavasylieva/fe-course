@@ -15,9 +15,7 @@
     url('../images/Layer\ 15@1x-min.jpg');
 }
 
-@media (-webkit-min-device-pixel-ratio: 2),
-(-moz-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .menu {
     width: 100%;
     background-position: center;
@@ -54,7 +52,7 @@
   justify-content: space-between;
   width: 400px;
 
-  
+
 }
 
 .menu__main a {

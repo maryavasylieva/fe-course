@@ -1,7 +1,7 @@
 {
   "name": "gulp-starter-kit",
   "version": "1.2.0",
-  "description": "![banner.png](https://i.ibb.co/2tX2gRk/banner.png)",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "prepare": "gulp prepare",
