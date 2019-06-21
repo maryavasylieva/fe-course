@@ -1,3 +1,9 @@
+import "../../assets/notes.json";
+
+
+
+export const shortid = require('shortid');
+
 export const PRIORITY_TYPES = {
   LOW: 0,
   NORMAL: 1,
@@ -17,3 +23,10 @@ export const NOTE_ACTIONS = {
   INCREASE_PRIORITY: 'increase-priority',
   DECREASE_PRIORITY: 'decrease-priority',
 };
+
+export const ref = {
+  list: document.querySelector('.note-list'),
+  editor: document.querySelector('.note-editor'),
+  filter: document.querySelector('.search-form__input')
+};
+
