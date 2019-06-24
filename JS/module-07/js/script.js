@@ -160,7 +160,8 @@ const getUniqueSkills = users =>
 
 users.reduce((allSkills, skill) => [...allSkills, ...skill.skills], [])
 .filter((skill, i,arr) => arr.indexOf(skill) === i)
-.sort((a,b) => a > b ? 1 : -1); 
+.sort((a,b) => a > b ? 1: -1);
+// .sort((a,b) => a - b); 
 
 
    // const user = users.filter(user => user.skills === skills).map(user => user.skills)

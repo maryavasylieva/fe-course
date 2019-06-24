@@ -51,34 +51,6 @@ const initialNotes = [
   },
 ];
 
-// Test: Interface creating 1
-
-// const list = document.querySelector('.note-list');
-
-// const createNote = ({title, body}) => {
-//   const createNoteElement = document.createElement('div');
-//   createNoteElement.classList.add('note__content');
-
-
-//   const noteTitle = document.createElement('h2');
-//   noteTitle.classList.add('note__title');
-//   noteTitle.textContent = title;
-
-
-//   const noteBody = document.createElement('p');
-//   noteBody.classList.add('note__body');
-//   noteBody.textContent = body;
-
-//   list.append(noteTitle);
-//   list.append(noteBody);
-// }
-
-// const notepad = createNote(initialNotes[0]);
-// list.appendChild(noteTitle);
-// list.appendChild(noteBody);
-
-
-
 class Notepad {
   constructor(notes=[]){
     this._notes = notes;
@@ -105,12 +77,21 @@ class Notepad {
   //   this._notes.push(newItem);
   //   return newItem;
   // }
+
+  // textEdit = (text) => {
+  //   li = document.getElementById('.note-list__item');
+  //   const newText = document.createTextNode(text);
+
+  //   li.appendChild(newText);
+  // }
+   
+
   removeListItem = (id) => {
-    return this._notes.filter(note => note.id !== id);
+    return this._notes.filter(note => note.id === id);
   }
 
   filteredNotesItem = (query = '') => {
-    return this._notes.filter(note => note.body.toLowerCase().includes(query.toLowerCase()) || note.title.toLowerCase().includes(query.toLowerCase))
+    return this._notes.filter(note => note.title.toLowerCase().includes(query.toLowerCase()) || note.body.toLowerCase().includes(query.toLowerCase()))
     // test: return this._notes.filter(note => note.body.toUpperCase().includes(query) || note.title.toUpperCase().includes(query));
   }
   
@@ -124,27 +105,6 @@ class Notepad {
 }
 
 const notepad = new Notepad(initialNotes);
-
-// Test: Interface creating 2
-
-// const list = document.querySelector('.note-list');
-// console.log(list);
-// const createNote = (title, body) => {
-//   const createNoteElement = document.createElement('div');
-//   createNoteElement.classList.add('note__content');
-
-//   const noteTitle = document.createElement('h2');
-//   noteTitle.classList.add('note__title');
-//   noteTitle.textContent = title;
-
-
-//   const noteBody = document.createElement('p');
-//   noteBody.classList.add('note__body');
-//   noteTitle.textContent = body;
-
-//   createNoteElement.append(noteTitle, noteBody);
-//   return createNoteElement;
-// }
 
 // Interface creation
 
@@ -235,11 +195,12 @@ const ref = {
   list: document.querySelector('.note-list'),
   editor: document.querySelector('.note-editor'),
   filter: document.querySelector('.search-form__input')
+
 }
 // console.log(ref.button)
 // console.log(ref.filter)
 
-// Create New Note
+//Interface creation: Create new note
 
 const createListItem = ({
   id,
@@ -263,7 +224,7 @@ const createListItem = ({
 
 const renderNoteList = (listRef, notes) => {
   const listItem = notes.map(li => createListItem(li));
-  //  очистить список элементов
+  // Необходимо: очистить список элементов, т.к. не фильтруется корректно
   listRef.innerHTML = '';
   
   listRef.append(...listItem);
@@ -274,16 +235,15 @@ renderNoteList(ref.list, notepad.notes);
 
 // Add new note to list
 
-const addListItem = (listRef, {
-  id = Notepad.generateUniqueId(),
-  title = titleValue,
-  body = bodyValue,
-  priority = PRIORITY_TYPES.LOW
-}) => { 
- const listItem = createListItem({id: id, title: title, body: body, priority: priority})
- listRef.appendChild(listItem);
-}
-
+// const addListItem = (listRef, {
+//   id = Notepad.generateUniqueId(),
+//   title = titleValue,
+//   body = bodyValue,
+//   priority = PRIORITY_TYPES.LOW
+// }) => { 
+//  const listItem = createListItem({id: id, title: title, body: body, priority: priority})
+//  listRef.appendChild(listItem);
+// }
 
 // Handlers
 
@@ -326,7 +286,10 @@ const handleEditorSubmit = event => {
 }
 
 
+
+
 const handleDeleteNotesClick = event => {
+  if(event.target.nodeName !== 'I') return
 
   if(event.target.textContent === ICON_TYPES.DELETE){
     const item = event.target.closest('.note-list__item')
@@ -344,12 +307,64 @@ const handleFilterChanged = event => {
   renderNoteList(ref.list, filteredNotes);
 }
 
-// listners
+// Listners
 
 ref.editor.addEventListener('submit', handleEditorSubmit);
 ref.filter.addEventListener('input', handleFilterChanged);
 ref.list.addEventListener('click', handleDeleteNotesClick);
+// ref.editor.addEventListener('submit', addTextNode);
 
+
+
+
+
+// Test: Interface creating 1
+
+// const list = document.querySelector('.note-list');
+
+// const createNote = ({title, body}) => {
+//   const createNoteElement = document.createElement('div');
+//   createNoteElement.classList.add('note__content');
+
+
+//   const noteTitle = document.createElement('h2');
+//   noteTitle.classList.add('note__title');
+//   noteTitle.textContent = title;
+
+
+//   const noteBody = document.createElement('p');
+//   noteBody.classList.add('note__body');
+//   noteBody.textContent = body;
+
+//   list.append(noteTitle);
+//   list.append(noteBody);
+// }
+
+// const notepad = createNote(initialNotes[0]);
+// list.appendChild(noteTitle);
+// list.appendChild(noteBody);
+
+
+// Test: Interface creating 2
+
+// const list = document.querySelector('.note-list');
+// console.log(list);
+// const createNote = (title, body) => {
+//   const createNoteElement = document.createElement('div');
+//   createNoteElement.classList.add('note__content');
+
+//   const noteTitle = document.createElement('h2');
+//   noteTitle.classList.add('note__title');
+//   noteTitle.textContent = title;
+
+
+//   const noteBody = document.createElement('p');
+//   noteBody.classList.add('note__body');
+//   noteTitle.textContent = body;
+
+//   createNoteElement.append(noteTitle, noteBody);
+//   return createNoteElement;
+// }
 
 
 

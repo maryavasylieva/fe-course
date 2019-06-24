@@ -1,4 +1,4 @@
-import "../../assets/notes.json";
+// import "../../assets/notes.json";
 
 
 
