@@ -64,6 +64,7 @@ const handleEditorSubmit = event => {
 }
 
 const handleDeleteNotesClick = event => {
+   if(event.target.nodeName !== 'I') return
 
    if (event.target.textContent === ICON_TYPES.DELETE) {
       const item = event.target.closest('.note-list__item')

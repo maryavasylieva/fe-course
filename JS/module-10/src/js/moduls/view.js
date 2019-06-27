@@ -111,7 +111,6 @@ export const createListItem = ({
 
 export const renderNoteList = (listRef, notes) => {
    const listItem = notes.map(li => createListItem(li));
-   // Необходимо: очистить список элементов, т.к. не фильтруется корректно
    listRef.innerHTML = '';
 
    listRef.append(...listItem);
