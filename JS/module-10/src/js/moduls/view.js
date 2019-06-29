@@ -1,23 +1,30 @@
-import { PRIORITY_TYPES, ICON_TYPES, NOTE_ACTIONS, ref, shortid} from "../utils/constants";
+import {
+   PRIORITY_TYPES,
+   ICON_TYPES,
+   NOTE_ACTIONS,
+   ref,
+   shortid
+} from "../utils/constants";
 // import Notepad from  
 import initialNotes from "../../assets/notes.json";
 
 
 // Отрисовка контента
 
+const createElem = (tag, className, text) => {
+   const elem = document.createElement(tag);
+   Array.isArray(className) ? className.map(name => elem.classList.add(name)) : elem.classList.add(className);
+   text ? elem.textContent = text : null;
+   return elem;
+}
+
 const createNoteContent = (title, body) => {
    const createNoteElement = document.createElement('div');
    createNoteElement.classList.add('note__content');
 
+   const noteTitle = createElem('h2', 'note__title', title);
 
-   const noteTitle = document.createElement('h2');
-   noteTitle.classList.add('note__title');
-   noteTitle.textContent = title;
-
-
-   const noteBody = document.createElement('p');
-   noteBody.classList.add('note__body');
-   noteBody.textContent = body;
+   const noteBody = createElem('h2', 'note__title', body);
 
    createNoteElement.append(noteTitle, noteBody);
 
@@ -33,44 +40,39 @@ const createNoteFooter = (priority) => {
    const noteSectionHigh = document.createElement('section');
    noteSectionHigh.classList.add('note__section');
 
-   const buttonDecrease = document.createElement('button');
-   buttonDecrease.classList.add('action');
+
+   const buttonDecrease = createElem('button', 'action');
    buttonDecrease.dataset.action = NOTE_ACTIONS.DECREASE_PRIORITY;
 
-   const iconMore = document.createElement('i');
-   iconMore.classList.add('material-icons', 'action__icon');
-   iconMore.textContent = ICON_TYPES.ARROW_UP;
+   const iconMore = createElem('i', ['material-icons', 'action__icon'], ICON_TYPES.ARROW_UP)
 
-   const buttonIncrease = document.createElement('button');
-   buttonIncrease.classList.add('action');
+   const buttonIncrease = createElem('button', 'action');
    buttonIncrease.dataset.action = NOTE_ACTIONS.INCREASE_PRIORITY;
 
-   const iconLess = document.createElement('i');
-   iconLess.classList.add('material-icons', 'action__icon');
-   iconLess.textContent = ICON_TYPES.ARROW_DOWN;
 
-   const notePriority = document.createElement('span');
-   notePriority.classList.add('note__priority');
-   notePriority.textContent = `Priority ${priority}`;
+
+   const iconLess = createElem('i', ['material-icons', 'action__icon'], ICON_TYPES.ARROW_DOWN);
+
+
+   const notePriority = createElem('section', 'note__section', `Priority ${priority}`);
 
    const noteSectionLow = document.createElement('section');
    noteSectionLow.classList.add('note__section');
 
-   const buttonEdit = document.createElement('button');
-   buttonEdit.classList.add('action');
+
+
+   const buttonEdit = createElem('button', 'action');
    buttonEdit.dataset.action = NOTE_ACTIONS.EDIT;
 
-   const iconEdit = document.createElement('i');
-   iconEdit.classList.add('material-icons', 'action__icon');
-   iconEdit.textContent = ICON_TYPES.EDIT;
 
-   const buttonDelete = document.createElement('button');
-   buttonDelete.classList.add('action');
+
+   const iconEdit = createElem('i', ['material-icons', 'action__icon'], ICON_TYPES.EDIT);
+
+
+   const buttonDelete = createElem('button', 'action');
    buttonDelete.dataset.action = NOTE_ACTIONS.DELETE;
 
-   const iconDelete = document.createElement('i');
-   iconDelete.classList.add('material-icons', 'action__icon');
-   iconDelete.textContent = ICON_TYPES.DELETE;
+   const iconDelete = createElem('i', ['material-icons', 'action__icon'], ICON_TYPES.DELETE);
 
 
    buttonDecrease.appendChild(iconMore);
@@ -123,8 +125,12 @@ export const addListItem = (listRef, {
    title = titleValue,
    body = bodyValue,
    priority = PRIORITY_TYPES.LOW
- }) => { 
-  const listItem = createListItem({id: id, title: title, body: body, priority: priority})
-  listRef.appendChild(listItem);
+}) => {
+   const listItem = createListItem({
+      id: id,
+      title: title,
+      body: body,
+      priority: priority
+   })
+   listRef.appendChild(listItem);
 }
- 

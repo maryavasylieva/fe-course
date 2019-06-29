@@ -1,7 +1,5 @@
 // import "../../assets/notes.json";
 
-
-
 export const shortid = require('shortid');
 
 export const PRIORITY_TYPES = {
@@ -29,4 +27,3 @@ export const ref = {
   editor: document.querySelector('.note-editor'),
   filter: document.querySelector('.search-form__input')
 };
-

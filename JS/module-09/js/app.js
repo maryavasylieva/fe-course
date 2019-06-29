@@ -20,44 +20,39 @@ const NOTE_ACTIONS = {
   DECREASE_PRIORITY: 'decrease-priority',
 };
 
-const initialNotes = [
-  {
+const initialNotes = [{
     id: 'id-1',
     title: 'JavaScript essentials',
-    body:
-      'Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc',
+    body: 'Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc',
     priority: PRIORITY_TYPES.HIGH,
   },
   {
     id: 'id-2',
     title: 'Refresh HTML and CSS',
-    body:
-      'Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.',
+    body: 'Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.',
     priority: PRIORITY_TYPES.NORMAL,
   },
   {
     id: 'id-3',
     title: 'Get comfy with Frontend frameworks',
-    body:
-      'First should get some general knowledge about frameworks, then maybe try each one for a week or so. Need to choose between React, Vue and Angular, by reading articles and watching videos.',
+    body: 'First should get some general knowledge about frameworks, then maybe try each one for a week or so. Need to choose between React, Vue and Angular, by reading articles and watching videos.',
     priority: PRIORITY_TYPES.NORMAL,
   },
   {
     id: 'id-4',
     title: 'Winter clothes',
-    body:
-      "Winter is coming! Need some really warm clothes: shoes, sweater, hat, jacket, scarf etc. Maybe should get a set of sportwear as well so I'll be able to do some excercises in the park.",
+    body: "Winter is coming! Need some really warm clothes: shoes, sweater, hat, jacket, scarf etc. Maybe should get a set of sportwear as well so I'll be able to do some excercises in the park.",
     priority: PRIORITY_TYPES.LOW,
   },
 ];
 
 class Notepad {
-  constructor(notes=[]){
+  constructor(notes = []) {
     this._notes = notes;
 
   }
 
-  get notes(){
+  get notes() {
     return this._notes;
   }
 
@@ -78,14 +73,6 @@ class Notepad {
   //   return newItem;
   // }
 
-  // textEdit = (text) => {
-  //   li = document.getElementById('.note-list__item');
-  //   const newText = document.createTextNode(text);
-
-  //   li.appendChild(newText);
-  // }
-   
-
   removeListItem = (id) => {
     return this._notes.filter(note => note.id === id);
   }
@@ -94,85 +81,82 @@ class Notepad {
     return this._notes.filter(note => note.title.toLowerCase().includes(query.toLowerCase()) || note.body.toLowerCase().includes(query.toLowerCase()))
     // test: return this._notes.filter(note => note.body.toUpperCase().includes(query) || note.title.toUpperCase().includes(query));
   }
-  
+
   static generateUniqueId = () =>
-  Math.random()
-      .toString(36)
-      .substring(2, 15) +
-  Math.random()
-      .toString(36)
-      .substring(2, 15);
+    Math.random()
+    .toString(36)
+    .substring(2, 15) +
+    Math.random()
+    .toString(36)
+    .substring(2, 15);
 }
 
 const notepad = new Notepad(initialNotes);
 
 // Interface creation
 
+
+const createElem = (tag, className,text) => {
+  const elem = document.createElement(tag);
+  Array.isArray(className) ? className.map(name => elem.classList.add(name)) : elem.classList.add(className);
+  text ? elem.textContent = text : null;
+  return elem;
+}
+
 const createNoteContent = (title, body) => {
   const createNoteElement = document.createElement('div');
   createNoteElement.classList.add('note__content');
 
+  const noteTitle = createElem('h2', 'note__title', title);
 
-  const noteTitle = document.createElement('h2');
-  noteTitle.classList.add('note__title');
-  noteTitle.textContent = title;
-
-
-  const noteBody = document.createElement('p');
-  noteBody.classList.add('note__body');
-  noteBody.textContent = body;
+  const noteBody = createElem('h2', 'note__title', body);
 
   createNoteElement.append(noteTitle, noteBody);
-  
+
 
   return createNoteElement;
 }
 
-const createNoteFooter = (priority) =>{
+const createNoteFooter = (priority) => {
   const footer = document.createElement('footer');
   footer.classList.add('note__footer');
 
   const noteSectionHigh = document.createElement('section');
   noteSectionHigh.classList.add('note__section');
 
-  const buttonDecrease = document.createElement('button');
-  buttonDecrease.classList.add('action');
+
+  const buttonDecrease = createElem('button', 'action');
   buttonDecrease.dataset.action = NOTE_ACTIONS.DECREASE_PRIORITY;
 
-  const iconMore = document.createElement('i');
-  iconMore.classList.add('material-icons', 'action__icon');
-  iconMore.textContent = ICON_TYPES.ARROW_UP;
+  const iconMore = createElem('i', ['material-icons', 'action__icon'], ICON_TYPES.ARROW_UP)
 
-  const buttonIncrease = document.createElement('button');
-  buttonIncrease.classList.add('action');
+  const buttonIncrease = createElem('button', 'action');
   buttonIncrease.dataset.action = NOTE_ACTIONS.INCREASE_PRIORITY;
 
-  const iconLess = document.createElement('i');
-  iconLess.classList.add('material-icons', 'action__icon');
-  iconLess.textContent = ICON_TYPES.ARROW_DOWN;
 
-  const notePriority = document.createElement('span');
-  notePriority.classList.add('note__priority');
-  notePriority.textContent = `Priority ${priority}`;
+
+  const iconLess = createElem('i', ['material-icons', 'action__icon'], ICON_TYPES.ARROW_DOWN);
+
+
+  const notePriority = createElem('section', 'note__section', `Priority ${priority}`);
 
   const noteSectionLow = document.createElement('section');
   noteSectionLow.classList.add('note__section');
 
-  const buttonEdit = document.createElement('button');
-  buttonEdit.classList.add('action');
+
+
+  const buttonEdit = createElem('button',  'action');
   buttonEdit.dataset.action = NOTE_ACTIONS.EDIT;
 
-  const iconEdit = document.createElement('i');
-  iconEdit.classList.add('material-icons', 'action__icon');
-  iconEdit.textContent = ICON_TYPES.EDIT;
 
-  const buttonDelete = document.createElement('button');
-  buttonDelete.classList.add('action');
+
+  const iconEdit = createElem('i', ['material-icons', 'action__icon'], ICON_TYPES.EDIT);
+
+
+  const buttonDelete = createElem('button', 'action');
   buttonDelete.dataset.action = NOTE_ACTIONS.DELETE;
 
-  const iconDelete = document.createElement('i');
-  iconDelete.classList.add('material-icons', 'action__icon');
-  iconDelete.textContent = ICON_TYPES.DELETE;
+  const iconDelete = createElem('i', ['material-icons', 'action__icon'], ICON_TYPES.DELETE);
 
 
   buttonDecrease.appendChild(iconMore);
@@ -208,7 +192,7 @@ const createListItem = ({
   body,
   priority
 }) => {
-  
+
   const noteList = document.createElement('li');
   noteList.classList.add('note-list__item');
   noteList.dataset.id = id;
@@ -216,9 +200,9 @@ const createListItem = ({
   const noteContainer = document.createElement('div');
   noteContainer.classList.add('note');
 
-  noteContainer.append(createNoteContent(title,body), createNoteFooter(priority));
+  noteContainer.append(createNoteContent(title, body), createNoteFooter(priority));
   noteList.appendChild(noteContainer);
-  
+
   return noteList;
 }
 
@@ -226,7 +210,7 @@ const renderNoteList = (listRef, notes) => {
   const listItem = notes.map(li => createListItem(li));
   // Необходимо: очистить список элементов, т.к. не фильтруется корректно
   listRef.innerHTML = '';
-  
+
   listRef.append(...listItem);
 }
 
@@ -240,22 +224,27 @@ renderNoteList(ref.list, notepad.notes);
 //   title = titleValue,
 //   body = bodyValue,
 //   priority = PRIORITY_TYPES.LOW
-// }) => { 
-//  const listItem = createListItem({id: id, title: title, body: body, priority: priority})
-//  listRef.appendChild(listItem);
+// }) => {
+//   const listItem = createListItem({
+//     id: id,
+//     title: title,
+//     body: body,
+//     priority: priority
+//   })
+//   listRef.appendChild(listItem);
 // }
 
 // Handlers
 
 const handleEditorSubmit = event => {
-  
+
   event.preventDefault();
   const [title, body, button] = event.currentTarget.elements;
   const titleValue = title.value;
   const bodyValue = body.value;
-  
-  if(titleValue.trim() === '' || bodyValue.trim() === ''){
-    alert('Необходимо заполнить все поля!');
+
+  if (titleValue.trim().length === 0 || bodyValue.trim().length === 0) {
+     return alert('Необходимо заполнить все поля!');
   }
 
   // const savedNotes = notepad.saveListItem({
@@ -273,32 +262,32 @@ const handleEditorSubmit = event => {
     body: bodyValue,
     priority: PRIORITY_TYPES.LOW
   }
-
+  
   const addItemToList = (listRef) => {
     const listItem = createListItem(savedNotes)
-    listRef.append(listItem);  
+    listRef.append(listItem);
   }
 
   addItemToList(ref.list, savedNotes);
 
+
+
   event.currentTarget.reset();
-  
+
 }
 
 
-
-
 const handleDeleteNotesClick = event => {
-  if(event.target.nodeName !== 'I') return
+  if (event.target.nodeName !== 'I') return
 
-  if(event.target.textContent === ICON_TYPES.DELETE){
+  if (event.target.textContent === ICON_TYPES.DELETE) {
     const item = event.target.closest('.note-list__item')
     notepad.id = item.dataset.id;
     notepad.removeListItem(notepad.id);
 
 
     item.remove();
-  } 
+  }
 }
 
 const handleFilterChanged = event => {
@@ -312,9 +301,6 @@ const handleFilterChanged = event => {
 ref.editor.addEventListener('submit', handleEditorSubmit);
 ref.filter.addEventListener('input', handleFilterChanged);
 ref.list.addEventListener('click', handleDeleteNotesClick);
-// ref.editor.addEventListener('submit', addTextNode);
-
-
 
 
 
@@ -365,7 +351,3 @@ ref.list.addEventListener('click', handleDeleteNotesClick);
 //   createNoteElement.append(noteTitle, noteBody);
 //   return createNoteElement;
 // }
-
-
-
-

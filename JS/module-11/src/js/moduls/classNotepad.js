@@ -9,7 +9,7 @@ export default class Notepad {
    }
 
    removeListItem(id){
-      return this._notes.filter(note => note.id === id);
+      return this._notes.filter(note => note.id !== id);
    }
 
    filteredNotesItem(query = ''){

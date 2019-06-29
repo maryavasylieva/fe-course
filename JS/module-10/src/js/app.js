@@ -31,8 +31,8 @@ const handleEditorSubmit = event => {
    const titleValue = title.value;
    const bodyValue = body.value;
 
-   if (titleValue.trim() === '' || bodyValue.trim() === '') {
-      alert('Необходимо заполнить все поля!');
+   if (titleValue.trim().length === 0 || bodyValue.trim().length === 0) {
+      return alert('Необходимо заполнить все поля!');
    }
 
 
