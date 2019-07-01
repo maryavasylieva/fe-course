@@ -14,6 +14,7 @@ export default class Notes {
       return new Promise((resolve, reject) => {
          setTimeout(() => {
             this._notes = this._notes.filter(note => note.id !== id);
+            // save notes in localstorage
             save('notes', this._notes);
             resolve(this._notes);
          }, 1000);

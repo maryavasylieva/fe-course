@@ -24,7 +24,6 @@ import {
 
 // const notes = new Notes(initialNotes);
 
-
 const notes = localNotes ? new Notes(localNotes) : new Notes(initialNotes);
 
 const handleModalClick = event => {
@@ -54,8 +53,8 @@ const handleEditorSubmit = event => {
    notes.saveListItem(savedNotes).then(saveNote => console.log(saveNote, notes.notes));
    setTimeout(() => ref.noteList.insertAdjacentHTML('beforeend', createListItem(savedNotes)), 300);
    MicroModal.close('note-editor-modal');
-   // remove('titleValue');
-   // remove('bodyValue');
+   remove('titleInput');
+   remove('bodyInput');
    event.currentTarget.reset();
    
 };
@@ -79,7 +78,7 @@ const handleFilterChanged = event => {
 };
 
 
-const handleEditorTest = (event) => {
+const handleEditorUpdate = (event) => {
    save ('titleInput', ref.titleInput.value);
    save ('bodyInput', ref.bodyInput.value);
 }
@@ -89,5 +88,5 @@ ref.formFilter.addEventListener('input', handleFilterChanged);
 ref.noteList.addEventListener('click', handleDeleteNotesClick);
 // ref.editor.addEventListener('submit', handleEditorSubmit);
 ref.editorBtn.addEventListener('click', handleModalClick);
-ref.noteForm.addEventListener('keyup', handleEditorTest);
+ref.noteForm.addEventListener('keyup', handleEditorUpdate);
 ref.noteForm.addEventListener('submit', handleEditorSubmit);

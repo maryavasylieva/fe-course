@@ -1,7 +1,6 @@
 // создать модуль для работы LocalStorage
 import { ref } from "../utils/constants";
-import { createListItem, createListItems} from "./view"
-// import Notes from './classNotepad';
+import { createListItems} from "./view"
  
 export const load = key => {
    try {
@@ -34,15 +33,13 @@ export const remove = key => {
 }
 
 
+// remove
+export const titleMessage = load('inputTitle');
+export const bodyMessage = load('inputBody');
 
-export const titleMessage = load('titleInput');
-export const bodyMessage = load('bodyInput');
-
-titleMessage ? ref.titleInput.value = titleMessage : null;
-bodyMessage ? ref.bodyInput.value = bodyMessage : null;
-
+// load
 export const localNotes = load('notes');
 
 if(localNotes) {
-   ref.noteList.innerHTML = createListItem(localNotes);
+   ref.noteList.innerHTML = createListItems(localNotes);
 }
