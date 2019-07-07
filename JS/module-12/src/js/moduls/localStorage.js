@@ -1,6 +1,7 @@
 // создать модуль для работы LocalStorage
 import { ref } from "../utils/constants";
-import { createListItems} from "./view"
+import { createListItems} from "./view";
+import notes from "../../assets/notes.json"
  
 export const load = key => {
    try {
@@ -37,6 +38,9 @@ export const remove = key => {
 export const titleMessage = load('inputTitle');
 export const bodyMessage = load('inputBody');
 
+
+titleMessage ? ref.titleInput.value = titleMessage : notes;
+bodyMessage ? ref.bodyInput.value = bodyMessage : notes;
 // load
 export const localNotes = load('notes');
 
