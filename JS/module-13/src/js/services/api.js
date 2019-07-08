@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3000/notes';
+const URL = 'http://localhost:3050/notes';
 
 export const getNote = () => {
    return fetch(URL).then(response => {
@@ -45,24 +45,24 @@ export const deleteNote = id => {
 };
 
 
-// export const updateNote = (updatedNote, id) => {
-//    const options = {
-//       method: 'PATCH',
-//       headers: {
-//          'Content-Type': 'application/json; charset=utf-8'
-//       },
+export const updateNote = (updatedNote, id) => {
+   const options = {
+      method: 'PATCH',
+      headers: {
+         'Content-Type': 'application/json; charset=utf-8'
+      },
 
-//       body: JSON.stringify(updatedNote)
-//    }
+      body: JSON.stringify(updatedNote)
+   }
 
-//    return fetch(`${URL}/${id}`, options).then(response => {
-//       if(response.ok){
-//          return response.json();
-//       }
+   return fetch(`${URL}/${id}`, options).then(response => {
+      if(response.ok){
+         return response.json();
+      }
 
-//       throw new Error('Error while fetching' + response.statusText);
-//    });
-// }
+      throw new Error('Error while fetching' + response.statusText);
+   });
+}
 
 
   

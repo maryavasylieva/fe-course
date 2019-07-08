@@ -28,6 +28,7 @@ export const ref = {
   titleInput: document.querySelector('input[name="note_title"]'),
   bodyInput: document.querySelector('textarea[name="note_body"]'),
   noteForm: document.getElementById('note-editor-form'),
+  updateBtn: document.querySelector('button[ data-action="edit-note"]'),
 };
 
 

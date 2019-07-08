@@ -6,8 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --env.mode development --env.port 8080",
     "build": "webpack --env.mode production",
-    "json": "json-server --watch ./src/server/db.json"
-    
+    "server": "json-server --watch db.json --port 3050"
   },
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
@@ -43,5 +42,6 @@
     "micromodal": "^0.4.0",
     "notyf": "^3.0.4",
     "shortid": "^2.2.14"
-  }
+  },
+  "keywords": []
 }

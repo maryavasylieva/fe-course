@@ -77,6 +77,14 @@ const handleFilterChanged = event => {
    ref.noteList.innerHTML = createListItems(filteredNotes);
 };
 
+const handleUpdated = event  => {
+   if(event.target.textContent !== 'edit') return
+
+   const edit = editorBtn.contains('material-icons action__icon');
+   console.log(edit);
+   
+} 
+
 // Listners
 
 ref.formFilter.addEventListener('input', handleFilterChanged);
