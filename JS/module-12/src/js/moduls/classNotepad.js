@@ -13,12 +13,18 @@ export default class Notes {
    removeListItem(id) {
       return new Promise((resolve, reject) => {
          setTimeout(() => {
-            this._notes = this._notes.filter(note => note.id !== id);
-            // save notes in localstorage
-            save('notes', this._notes);
-            resolve(this._notes);
-         }, 1000);
-      })
+             this._notes = this._notes.filter(note => note.id !== id);
+             save('notes', this._notes);
+             resolve(this._notes);
+         }, 1000)
+     })
+      // return new Promise((resolve, reject) => {
+      //    setTimeout(() => {
+      //       this._notes = this._notes.filter(note => note.id !== id);
+      //       save('notes', this._notes);
+      //       resolve(this._notes);
+      //    }, 1000);
+      // })
    }
 
    // removeListItem(id) {
