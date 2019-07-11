@@ -1,0 +1,66 @@
+.titleStyle{
+   color: brown;
+   font-size: 50px;
+   font-style: italic;
+}
+
+.priceStyle {
+   color: rgb(143, 47, 143);
+   font-size: 30px;
+   font-style: italic; 
+}
+
+.titleDisable{
+   color: violet;
+   composes: titleStyle;
+}
+
+
+.listStyle{
+   list-style: none;
+   display: flex;
+   justify-content: space-around;
+}
+
+/* .listStyle:hover::after {
+   color: linear-gradient(to right, rgba(252,236,252,1) 0%, rgba(251,166,225,1) 50%, rgba(253,137,215,1) 51%, rgba(255,124,216,1) 100%);
+} */
+
+.mainStyle{
+   /* text-align: center;
+   text-shadow: -4px -4px 0px #D2EAD7;
+   background: repeating-linear-gradient(45deg, #6EB495, #6EB495 1px, white 2px, white 3px);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-size: 40px; */
+   text-align: center;
+   font-size: 40px;
+   animation: flow 10s ease-in-out infinite;
+   background: linear-gradient(-60deg, #904e95, #904e95, #e73c7e, #ee7752);
+   text-shadow: -4px -4px 0px rgb(137, 202, 151);
+   background-size: 300%;
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+@keyframes flow {
+   0% {
+      background-position: 0 50%;
+   }
+
+   50% {
+      background-position: 100% 50%;
+   }
+
+   100% {
+      background-position: 0 50%;
+   }
+}
+
+.imgStyle{
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
