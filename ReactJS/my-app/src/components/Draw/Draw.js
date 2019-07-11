@@ -1,6 +1,6 @@
-import React from "react";
-import Menu from "../Menu/index";
-import style from "../Menu/Menu.module.css";
+import React from 'react';
+import Menu from '../Menu/index';
+import style from '../Menu/Menu.module.css';
 // import styled from 'styled-components';
 
 // const StyleWrapper = styled.ul`
@@ -11,7 +11,7 @@ const Draw = ({ obj }) => {
   console.log(obj);
   return (
     <ul className={style.listStyle}>
-      {obj.map((elem) => (
+      {obj.map(elem => (
         <li key={elem.id}>
           <Menu {...elem} />
         </li>

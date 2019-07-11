@@ -1,94 +1,114 @@
-import 'notyf/notyf.min.css';
-import MicroModal from 'micromodal';
+import "notyf/notyf.min.css";
+import MicroModal from "micromodal";
 import * as api from "./services/api";
-import initialNotes from '../assets/notes.json';
-import Notes from '../js/moduls/classNotepad';
+import initialNotes from "../assets/notes.json";
+import Notes from "../js/moduls/classNotepad";
 import {
-   createListItems,
-   createListItem,
-   // markup
-} from './moduls/view';
+  createListItems,
+  createListItem
+  // markup
+} from "./moduls/view";
 import {
-   NOTIFICATION_MESSAGES,
-   NOTE_ACTIONS,
-   PRIORITY_TYPES,
-   shortid,
-   ref,
-   notyf
-} from '../js/utils/constants';
-
+  NOTIFICATION_MESSAGES,
+  NOTE_ACTIONS,
+  PRIORITY_TYPES,
+  shortid,
+  ref,
+  notyf
+} from "../js/utils/constants";
 
 export const notes = new Notes(initialNotes);
-notes.getNote().then(notes => ref.noteList.insertAdjacentHTML('beforeend', createListItems(notes)));
+notes
+  .getNote()
+  .then((notes) =>
+    ref.noteList.insertAdjacentHTML("beforeend", createListItems(notes))
+  );
 // console.log(notes);
 
-const handleModalClick = event => {
-   MicroModal.show('note-editor-modal');
+const handleModalClick = (event) => {
+  MicroModal.show("note-editor-modal");
 };
 
-const handleEditorSubmit = event => {
+const handleEditorSubmit = (event) => {
+  event.preventDefault();
+  const [titleInput, bodyInput, cancel, submit] = event.currentTarget.elements;
+  const titleValue = titleInput.value;
+  const bodyValue = bodyInput.value;
 
-   event.preventDefault();
-   const [titleInput, bodyInput, cancel, submit] = event.currentTarget.elements;
-   const titleValue = titleInput.value;
-   const bodyValue = bodyInput.value;
+  if (titleValue.trim() === "" || bodyValue.trim() === "") {
+    return notyf.error(NOTIFICATION_MESSAGES.EDITOR_FIELDS_EMPTY);
+  }
 
-   if (titleValue.trim() === '' || bodyValue.trim() === '') {
-      return notyf.error(NOTIFICATION_MESSAGES.EDITOR_FIELDS_EMPTY)
-   }
+  const newNotes = {
+    id: shortid(),
+    title: titleValue,
+    body: bodyValue,
+    priority: PRIORITY_TYPES.LOW
+  };
 
-
-   const newNotes = {
-      id: shortid,
-      title: titleValue,
-      body: bodyValue,
-      priority: PRIORITY_TYPES.LOW
-   }
-
-   notes.saveListItem(newNotes).then(savedNote => {
+  notes
+    .saveListItem(newNotes)
+    .then((savedNote) => {
       newNotes.id = savedNote.id;
-      ref.noteList.insertAdjacentHTML('beforeend', createListItem(newNotes))
-      notyf.success(NOTIFICATION_MESSAGES.NOTE_ADDED_SUCCESS)
-   }).catch(error =>{
-      notyf.error(NOTIFICATION_MESSAGES.ERROR_FIELDS)
-   });
+      ref.noteList.insertAdjacentHTML("beforeend", createListItem(newNotes));
+      notyf.success(NOTIFICATION_MESSAGES.NOTE_ADDED_SUCCESS);
+    })
+    .catch((error) => {
+      notyf.error(NOTIFICATION_MESSAGES.ERROR_FIELDS);
+    });
 
-   MicroModal.close('note-editor-modal');
-   event.currentTarget.reset();
-   
+  MicroModal.close("note-editor-modal");
+  event.currentTarget.reset();
 };
 
-const handleDeleteNotesClick = event => {
-   if (event.target.textContent !== 'delete') return
-   const item = event.target.closest('li');
-   const id = item.dataset.id;
+const handleDeleteNotesClick = (event) => {
+  if (event.target.textContent !== "delete") return;
+  const item = event.target.closest("li");
+  const id = item.dataset.id;
 
-   notes.removeListItem(id).then(() => {
-       item.remove()
-       notyf.success(NOTIFICATION_MESSAGES.NOTE_DELETED_SUCCESS);
-   });
-      
-   
+  notes.removeListItem(id).then(() => {
+    item.remove();
+    notyf.success(NOTIFICATION_MESSAGES.NOTE_DELETED_SUCCESS);
+  });
 };
 
-const handleFilterChanged = event => {
-   const input = event.target.value
-   const filteredNotes = notepad.filteredNotesItem(input);
-   ref.noteList.innerHTML = createListItems(filteredNotes);
+const handleFilterChanged = (event) => {
+  const input = event.target.value;
+  const filteredNotes = notepad.filteredNotesItem(input);
+  ref.noteList.innerHTML = createListItems(filteredNotes);
 };
 
-const handleUpdated = event  => {
-   if(event.target.textContent !== 'edit') return
+const handleUpdated = (event) => {
+  if (event.target.closest("button").dataset.action === "edit-note") {
+    ref.noteForm.removeEventListener("submit", handleEditorSubmit);
+    MicroModal.show("note-editor-modal");
+  }
 
-   const edit = editorBtn.contains('material-icons action__icon');
-   console.log(edit);
-   
-} 
+  const newUpdateNote = {
+    title: titleValue,
+    body: bodyValue
+  };
+
+  notes.updateNoteContent(id, newUpdateNote);
+  MicroModal.close("note-editor-modal");
+  ref.noteForm.addEventListener("submit", handleEditorSubmit);
+  // createUpdateNote.addEventListener("submit", () => {
+  //   const newUpdateNote = {
+  //     title: titleInput.value,
+  //     body: bodyInput.value
+  //   };
+
+  //   notes.updateNoteContent(id, newUpdateNote);
+  //   MicroModal.close("note-editor-modal");
+  //   ref.noteForm.addEventListener("submit", handleEditorSubmit);
+  // });
+};
 
 // Listners
 
-ref.formFilter.addEventListener('input', handleFilterChanged);
-ref.noteList.addEventListener('click', handleDeleteNotesClick);
+ref.formFilter.addEventListener("input", handleFilterChanged);
+ref.noteList.addEventListener("click", handleDeleteNotesClick);
 // ref.editor.addEventListener('submit', handleEditorSubmit);
-ref.editorBtn.addEventListener('click', handleModalClick);
-ref.noteForm.addEventListener('submit', handleEditorSubmit);
+ref.noteList.addEventListener("click", handleUpdated);
+ref.editorBtn.addEventListener("click", handleModalClick);
+ref.noteForm.addEventListener("submit", handleEditorSubmit);

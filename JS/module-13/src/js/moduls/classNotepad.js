@@ -39,7 +39,7 @@ export default class Notes {
      });
    };
 
-   update(id, note) {
+   updateNotes(id, note) {
       return api.updateNote(id, note).then(updateItem => {
         this._notes = this._notes.map(note => note.id === updateItem.id ? updateItem : note);
 
