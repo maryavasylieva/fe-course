@@ -79,29 +79,35 @@ const handleFilterChanged = (event) => {
 };
 
 const handleUpdated = (event) => {
+  const [titleInput, bodyInput, cancel, submit] = event.currentTarget.elements;
+  const titleValue = titleInput.value;
+  const bodyValue = bodyInput.value;
+
   if (event.target.closest("button").dataset.action === "edit-note") {
     ref.noteForm.removeEventListener("submit", handleEditorSubmit);
     MicroModal.show("note-editor-modal");
   }
 
-  const newUpdateNote = {
-    title: titleValue,
-    body: bodyValue
-  };
+  noteTitle = titleInput.value = event.target
+    .closest("li")
+    .querySelector(".note__title")
+    .textContent.trim();
+  noteBody = bodyInput.value = event.target
+    .closest("li")
+    .querySelector(".note__body")
+    .textContent.trim();
+  const id = event.target.closest("li").dataset.id;
 
-  notes.updateNoteContent(id, newUpdateNote);
-  MicroModal.close("note-editor-modal");
-  ref.noteForm.addEventListener("submit", handleEditorSubmit);
-  // createUpdateNote.addEventListener("submit", () => {
-  //   const newUpdateNote = {
-  //     title: titleInput.value,
-  //     body: bodyInput.value
-  //   };
+  createUpdateNote.addEventListener("submit", () => {
+    const newUpdateNote = {
+      title: titleInput.value,
+      body: bodyInput.value
+    };
 
-  //   notes.updateNoteContent(id, newUpdateNote);
-  //   MicroModal.close("note-editor-modal");
-  //   ref.noteForm.addEventListener("submit", handleEditorSubmit);
-  // });
+    notes.updateNotes(id, newUpdateNote);
+    MicroModal.close("note-editor-modal");
+    ref.noteForm.addEventListener("submit", handleEditorSubmit);
+  });
 };
 
 // Listners
