@@ -61,60 +61,63 @@ const handleEditorSubmit = (event) => {
   event.currentTarget.reset();
 };
 
-const handleDeleteNotesClick = (event) => {
-  if (event.target.textContent !== "delete") return;
-  const item = event.target.closest("li");
-  const id = item.dataset.id;
+// const handleDeleteNotesClick = (event) => {
+//   if (event.target.textContent !== "delete") return;
+//   const item = event.target.closest("li");
+//   const id = item.dataset.id;
 
-  notes.removeListItem(id).then(() => {
-    item.remove();
-    notyf.success(NOTIFICATION_MESSAGES.NOTE_DELETED_SUCCESS);
-  });
-};
+//   notes.removeListItem(id).then(() => {
+//     item.remove();
+//     notyf.success(NOTIFICATION_MESSAGES.NOTE_DELETED_SUCCESS);
+//   });
+// };
 
-const handleFilterChanged = (event) => {
-  const input = event.target.value;
-  const filteredNotes = notepad.filteredNotesItem(input);
-  ref.noteList.innerHTML = createListItems(filteredNotes);
-};
+// const handleFilterChanged = (event) => {
+//   const input = event.target.value;
+//   const filteredNotes = notepad.filteredNotesItem(input);
+//   ref.noteList.innerHTML = createListItems(filteredNotes);
+// };
 
-const handleUpdated = (event) => {
-  const [titleInput, bodyInput, cancel, submit] = event.currentTarget.elements;
-  const titleValue = titleInput.value;
-  const bodyValue = bodyInput.value;
+// const handleUpdated = (event) => {
+//   event.preventDefault();
 
-  if (event.target.closest("button").dataset.action === "edit-note") {
-    ref.noteForm.removeEventListener("submit", handleEditorSubmit);
-    MicroModal.show("note-editor-modal");
-  }
+//   let titleValue = ref.titleInput.value;
+//   let bodyValue = ref.bodyInput.value;
 
-  noteTitle = titleInput.value = event.target
-    .closest("li")
-    .querySelector(".note__title")
-    .textContent.trim();
-  noteBody = bodyInput.value = event.target
-    .closest("li")
-    .querySelector(".note__body")
-    .textContent.trim();
-  const id = event.target.closest("li").dataset.id;
+//   if (event.target.closest("button").dataset.action === "edit-note") {
+//     ref.noteForm.removeEventListener("submit", handleEditorSubmit);
+//     MicroModal.show("note-editor-modal");
 
-  createUpdateNote.addEventListener("submit", () => {
-    const newUpdateNote = {
-      title: titleInput.value,
-      body: bodyInput.value
-    };
+//     titleValue = ref.titleInput.value = event.target
+//       .closest("li")
+//       .querySelector(".note__title")
+//       .textContent.trim();
 
-    notes.updateNotes(id, newUpdateNote);
-    MicroModal.close("note-editor-modal");
-    ref.noteForm.addEventListener("submit", handleEditorSubmit);
-  });
-};
+//     bodyValue = ref.bodyInput.value = event.target
+//       .closest("li")
+//       .querySelector(".note__body")
+//       .textContent.trim();
+//     const id = event.target.closest("li").dataset.id;
+
+//     ref.noteForm.addEventListener("submit", () => {
+//       const updatedNote = {
+//         title: titleValue,
+//         body: bodyValue
+//       };
+
+//       notes.updateNotes(id, updatedNote);
+
+//       notyf.success(NOTIFICATION_MESSAGES.NOTE_EDIT);
+//       MicroModal.close("note-editor-modal");
+//       // ref.noteForm.addEventListener("submit", handleEditorSubmit);
+//     });
+//   }
+// };
 
 // Listners
 
-ref.formFilter.addEventListener("input", handleFilterChanged);
 ref.noteList.addEventListener("click", handleDeleteNotesClick);
-// ref.editor.addEventListener('submit', handleEditorSubmit);
-ref.noteList.addEventListener("click", handleUpdated);
+// ref.noteList.addEventListener("click", handleUpdated);
 ref.editorBtn.addEventListener("click", handleModalClick);
+ref.formFilter.addEventListener("input", handleFilterChanged);
 ref.noteForm.addEventListener("submit", handleEditorSubmit);
