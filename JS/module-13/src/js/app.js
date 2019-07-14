@@ -61,22 +61,24 @@ const handleEditorSubmit = (event) => {
   event.currentTarget.reset();
 };
 
-// const handleDeleteNotesClick = (event) => {
-//   if (event.target.textContent !== "delete") return;
-//   const item = event.target.closest("li");
-//   const id = item.dataset.id;
+const handleDeleteNotesClick = (event) => {
+  if (event.target.textContent !== "delete") return;
+  const item = event.target.closest("li");
+  const id = item.dataset.id;
 
-//   notes.removeListItem(id).then(() => {
-//     item.remove();
-//     notyf.success(NOTIFICATION_MESSAGES.NOTE_DELETED_SUCCESS);
-//   });
-// };
+  notes.removeListItem(id).then(() => {
+    item.remove();
+    notyf.success(NOTIFICATION_MESSAGES.NOTE_DELETED_SUCCESS);
+  });
+};
 
-// const handleFilterChanged = (event) => {
-//   const input = event.target.value;
-//   const filteredNotes = notepad.filteredNotesItem(input);
-//   ref.noteList.innerHTML = createListItems(filteredNotes);
-// };
+const handleFilterChanged = (event) => {
+  const input = event.target.value;
+  const filteredNotes = notes.filteredNotesItem(input);
+  ref.noteList.innerHTML = createListItems(filteredNotes);
+};
+
+// UPDATE
 
 // const handleUpdated = (event) => {
 //   event.preventDefault();
